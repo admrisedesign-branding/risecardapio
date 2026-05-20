@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rise — Cardápio de Serviços</title>
+<link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Instrument Sans',sans-serif;
+  background:#07050F;
+  color:#E8E8F2;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.55;
+}
+
+/* ── LAYOUT ── */
+.wrap{max-width:1000px;margin:0 auto;padding:56px 40px 80px}
+@media(max-width:680px){.wrap{padding:36px 20px 60px}}
+
+/* ── UTILS ── */
+.grad-line{
+  height:2px;
+  background:linear-gradient(90deg,#6C3FFF 0%,#9B6BFF 35%,#FF4D00 70%,#FF7A3D 100%);
+  border-radius:2px;
+  box-shadow:0 0 16px rgba(108,63,255,.5),0 0 8px rgba(255,77,0,.3);
+}
+.divider{border:none;border-top:1px solid rgba(255,255,255,.06);margin:52px 0}
+
+/* ── HEADER ── */
+.header{padding:0 0 48px;position:relative;overflow:hidden}
+.header::before{
+  content:'';position:absolute;
+  width:600px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(108,63,255,.18) 0%,transparent 65%);
+  top:-200px;right:-160px;filter:blur(70px);pointer-events:none;
+}
+.header::after{
+  content:'';position:absolute;
+  width:350px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,85,0,.10) 0%,transparent 70%);
+  bottom:-60px;left:-80px;filter:blur(50px);pointer-events:none;
+}
+.header-inner{position:relative;z-index:1}
+.logo-row{display:flex;align-items:center;gap:10px;margin-bottom:52px}
+.logo-sq{
+  width:38px;height:38px;background:#6C3FFF;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cabinet Grotesk',sans-serif;font-weight:900;font-size:15px;color:#fff;
+}
+.logo-name{font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:.95rem;color:#fff}
+.logo-sub{font-size:.65rem;color:rgba(255,255,255,.35);margin-top:1px}
+.eyebrow{
+  font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:#6C3FFF;display:flex;align-items:center;gap:8px;margin-bottom:12px;
+}
+.eyebrow::before{content:'';width:14px;height:2px;background:#6C3FFF;border-radius:1px}
+.header h1{
+  font-family:'Cabinet Grotesk',sans-serif;
+  font-size:clamp(2rem,4.5vw,3rem);font-weight:900;
+  line-height:1.08;letter-spacing:-.03em;color:#fff;margin-bottom:14px;
+}
+.header h1 em{font-style:normal;color:#FF5500}
+.header-sub{font-size:.95rem;color:rgba(255,255,255,.5);line-height:1.72;max-width:560px;margin-bottom:28px}
+.header-note{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(108,63,255,.1);border:1px solid rgba(108,63,255,.22);
+  border-radius:8px;padding:9px 16px;
+  font-size:.8rem;color:rgba(255,255,255,.55);line-height:1.5;
+}
+.header-note strong{color:#A78BFF;font-weight:600}
+
+/* ── CATEGORY LABEL ── */
+.cat-label{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:20px;
+}
+.cat-icon{
+  width:36px;height:36px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;flex-shrink:0;
+}
+.cat-title{
+  font-family:'Cabinet Grotesk',sans-serif;
+  font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+}
+.cat-line{flex:1;height:1px;background:rgba(255,255,255,.06)}
+
+/* category colors */
+.c-brand .cat-icon{background:rgba(108,63,255,.15);border:1px solid rgba(108,63,255,.25)}
+.c-brand .cat-title{color:#9B6BFF}
+.c-digital .cat-icon{background:rgba(255,85,0,.12);border:1px solid rgba(255,85,0,.22)}
+.c-digital .cat-title{color:#FF8C55}
+.c-mkt .cat-icon{background:rgba(234,179,8,.10);border:1px solid rgba(234,179,8,.2)}
+.c-mkt .cat-title{color:#FCD34D}
+.c-crm .cat-icon{background:rgba(34,197,94,.10);border:1px solid rgba(34,197,94,.2)}
+.c-crm .cat-title{color:#4ADE80}
+.c-auto .cat-icon{background:rgba(56,189,248,.10);border:1px solid rgba(56,189,248,.2)}
+.c-auto .cat-title{color:#7DD3FC}
+.c-pack .cat-icon{background:rgba(251,146,60,.12);border:1px solid rgba(251,146,60,.22)}
+.c-pack .cat-title{color:#FBA06C}
+
+/* ── SERVICE CARDS ── */
+.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:40px}
+@media(max-width:640px){.services-grid{grid-template-columns:1fr}}
+
+.svc-card{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:10px;padding:22px 20px;
+  position:relative;overflow:hidden;
+  transition:border-color .2s,transform .2s;
+  display:flex;flex-direction:column;
+}
+.svc-card:hover{border-color:rgba(255,255,255,.14);transform:translateY(-2px)}
+.svc-card.featured{
+  border-color:rgba(108,63,255,.28);
+  background:rgba(108,63,255,.06);
+}
+.svc-card.featured:hover{border-color:rgba(108,63,255,.45)}
+
+/* accent top line on featured */
+.svc-card.featured::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,#6C3FFF,#9B6BFF);
+}
+
+.svc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:10px}
+.svc-name{
+  font-family:'Cabinet Grotesk',sans-serif;
+  font-size:.95rem;font-weight:800;color:#fff;line-height:1.2;
+}
+.svc-badge{
+  font-size:.62rem;font-weight:700;padding:2px 8px;border-radius:4px;
+  white-space:nowrap;flex-shrink:0;margin-top:2px;
+}
+.sb-pop{background:rgba(108,63,255,.16);border:1px solid rgba(108,63,255,.28);color:#A78BFF}
+.sb-new{background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.22);color:#4ADE80}
+.sb-hot{background:rgba(255,85,0,.12);border:1px solid rgba(255,85,0,.22);color:#FF8C55}
+.sb-soon{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.35)}
+
+.svc-desc{font-size:.8rem;color:rgba(255,255,255,.45);line-height:1.6;margin-bottom:14px;flex:1}
+.svc-includes{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px}
+.si-tag{
+  font-size:.66rem;font-weight:500;
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);
+  border-radius:4px;padding:2px 8px;color:rgba(255,255,255,.4);
+}
+.svc-bottom{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  margin-top:auto;padding-top:14px;border-top:1px solid rgba(255,255,255,.05);
+}
+.svc-price-label{font-size:.62rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:3px}
+.svc-price{
+  font-family:'Cabinet Grotesk',sans-serif;
+  font-size:1.2rem;font-weight:900;color:#fff;line-height:1;
+}
+.svc-price em{font-style:normal;font-size:.75rem;font-weight:500;color:rgba(255,255,255,.4)}
+.svc-price.strike{text-decoration:line-through;color:rgba(255,255,255,.28);font-size:.95rem}
+.svc-price-real{
+  font-family:'Cabinet Grotesk',sans-serif;
+  font-size:1.2rem;font-weight:900;color:#4ADE80;line-height:1;
+}
+/* preço cheio riscado acima do preço atual */
+.svc-price-full{
+  font-family:'Cabinet Grotesk',sans-serif;
+  font-size:.78rem;font-weight:600;
+  color:rgba(255,255,255,.25);
+  text-decoration:line-through;
+  text-decoration-color:rgba(255,77,0,.5);
+  text-decoration-thickness:1.5px;
+  margin-bottom:2px;line-height:1;
+}
+/* tarja de desconto */
+.discount-tag{
+  display:inline-flex;align-items:center;gap:3px;
+  background:linear-gradient(135deg,rgba(255,77,0,.18) 0%,rgba(255,122,61,.14) 100%);
+  border:1px solid rgba(255,77,0,.35);
+  border-radius:4px;padding:2px 6px;margin-top:4px;
+  font-family:'Cabinet Grotesk',sans-serif;
+  font-size:.6rem;font-weight:800;letter-spacing:.04em;
+  color:#FF8C55;text-transform:uppercase;
+  white-space:nowrap;
+}
+.svc-note{font-size:.68rem;color:rgba(255,255,255,.3);text-align:right;max-width:160px;line-height:1.3}
+
+/* ── DESTAQUE / FEATURED FULL WIDTH ── */
+.svc-card-full{
+  grid-column:1/-1;
+  background:linear-gradient(135deg,rgba(108,63,255,.10) 0%,rgba(255,85,0,.06) 100%);
+  border:1px solid rgba(108,63,255,.25);
+  border-radius:12px;padding:26px 24px;
+  position:relative;overflow:hidden;
+}
+.svc-card-full::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,#6C3FFF 0%,#9B6BFF 35%,#FF4D00 70%,#FF7A3D 100%);
+}
+.svc-full-inner{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+@media(max-width:640px){.svc-full-inner{grid-template-columns:1fr}}
+.svc-full-left .svc-name{font-size:1.1rem;margin-bottom:8px}
+.svc-full-left .svc-desc{font-size:.84rem;margin-bottom:14px}
+.svc-full-includes{display:flex;flex-direction:column;gap:6px}
+.sfi{display:flex;align-items:flex-start;gap:8px;font-size:.8rem;color:rgba(255,255,255,.55)}
+.sfi-check{
+  width:18px;height:18px;border-radius:4px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:.6rem;
+}
+.sc-p{background:rgba(108,63,255,.18);border:1px solid rgba(108,63,255,.3);color:#A78BFF}
+.svc-full-price{text-align:right}
+.sfp-market{font-size:.75rem;color:rgba(255,255,255,.25);text-decoration:line-through;margin-bottom:4px}
+.sfp-label{font-size:.62rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:4px}
+.sfp-price{font-family:'Cabinet Grotesk',sans-serif;font-size:2rem;font-weight:900;color:#fff;line-height:1;margin-bottom:6px}
+.sfp-price em{font-style:normal;color:#A78BFF}
+.sfp-note{font-size:.72rem;color:rgba(255,255,255,.35);line-height:1.45}
+
+/* ── PACKAGES ── */
+.packages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:40px}
+@media(max-width:720px){.packages-grid{grid-template-columns:1fr}}
+
+.pkg-card{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:12px;overflow:hidden;
+  display:flex;flex-direction:column;
+  transition:border-color .2s;
+}
+.pkg-card:hover{border-color:rgba(255,255,255,.14)}
+.pkg-card.recommended{
+  border-color:rgba(108,63,255,.35);
+  background:rgba(108,63,255,.06);
+}
+.pkg-head{padding:20px 20px 16px;border-bottom:1px solid rgba(255,255,255,.06)}
+.pkg-card.recommended .pkg-head{background:rgba(108,63,255,.08)}
+.pkg-rec-badge{
+  display:inline-block;
+  background:rgba(108,63,255,.2);border:1px solid rgba(108,63,255,.35);
+  border-radius:5px;padding:2px 8px;
+  font-size:.62rem;font-weight:700;color:#A78BFF;
+  margin-bottom:10px;
+}
+.pkg-name{font-family:'Cabinet Grotesk',sans-serif;font-size:1rem;font-weight:900;color:#fff;margin-bottom:4px}
+.pkg-target{font-size:.75rem;color:rgba(255,255,255,.38)}
+.pkg-price-row{padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.06)}
+.pkg-price-label{font-size:.62rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:4px}
+.pkg-price-full{
+  font-family:'Cabinet Grotesk',sans-serif;
+  font-size:.92rem;font-weight:700;
+  color:rgba(255,255,255,.28);
+  text-decoration:line-through;
+  text-decoration-color:rgba(255,77,0,.55);
+  text-decoration-thickness:1.5px;
+  margin-bottom:3px;line-height:1;
+}
+.pkg-price-full em{font-style:normal;font-size:.7rem;font-weight:500}
+.pkg-price{font-family:'Cabinet Grotesk',sans-serif;font-size:1.6rem;font-weight:900;color:#fff;line-height:1}
+.pkg-card.recommended .pkg-price{color:#A78BFF}
+.pkg-price em{font-style:normal;font-size:.85rem;font-weight:500;color:rgba(255,255,255,.4)}
+.pkg-discount-tag{
+  display:inline-flex;align-items:center;
+  background:linear-gradient(135deg,rgba(255,77,0,.2) 0%,rgba(255,122,61,.16) 100%);
+  border:1px solid rgba(255,77,0,.4);
+  border-radius:4px;padding:3px 7px;margin-top:6px;
+  font-family:'Cabinet Grotesk',sans-serif;
+  font-size:.62rem;font-weight:800;letter-spacing:.05em;
+  color:#FF8C55;text-transform:uppercase;
+}
+.pkg-items{padding:16px 20px;flex:1}
+.pi{display:flex;align-items:flex-start;gap:8px;font-size:.78rem;color:rgba(255,255,255,.5);margin-bottom:8px;line-height:1.4}
+.pi:last-child{margin-bottom:0}
+.pi-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.2);flex-shrink:0;margin-top:5px}
+.pkg-card.recommended .pi-dot{background:rgba(108,63,255,.6)}
+.pkg-foot{padding:14px 20px;border-top:1px solid rgba(255,255,255,.06)}
+.pkg-savings{font-size:.72rem;color:#4ADE80;font-weight:600}
+.pkg-note{font-size:.68rem;color:rgba(255,255,255,.3);margin-top:2px}
+
+/* ── DISCOUNT TABLE ── */
+.discount-note{
+  background:rgba(34,197,94,.06);
+  border:1px solid rgba(34,197,94,.15);
+  border-radius:10px;padding:18px 22px;
+  display:flex;align-items:flex-start;gap:12px;margin-bottom:40px;
+}
+.dn-icon{font-size:1.2rem;flex-shrink:0;margin-top:1px}
+.dn-text{font-size:.82rem;color:rgba(255,255,255,.55);line-height:1.65}
+.dn-text strong{color:#4ADE80;font-weight:600}
+
+/* ── FAQ / NOTES ── */
+.notes-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:40px}
+@media(max-width:580px){.notes-grid{grid-template-columns:1fr}}
+.note-card{background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:16px 16px}
+.note-q{font-family:'Cabinet Grotesk',sans-serif;font-size:.84rem;font-weight:800;color:#fff;margin-bottom:5px}
+.note-a{font-size:.78rem;color:rgba(255,255,255,.42);line-height:1.6}
+
+/* ── FOOTER CTA ── */
+.footer-cta{
+  background:rgba(108,63,255,.08);border:1px solid rgba(108,63,255,.2);
+  border-radius:14px;padding:36px 40px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.footer-cta::before{
+  content:'';position:absolute;width:350px;height:250px;border-radius:50%;
+  background:radial-gradient(circle,rgba(108,63,255,.15) 0%,transparent 70%);
+  top:-80px;right:-60px;filter:blur(50px);
+}
+.footer-cta::after{
+  content:'';position:absolute;width:200px;height:200px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,85,0,.1) 0%,transparent 70%);
+  bottom:-40px;left:-20px;filter:blur(40px);
+}
+.footer-cta-inner{position:relative;z-index:1}
+.footer-cta h3{font-family:'Cabinet Grotesk',sans-serif;font-size:1.5rem;font-weight:900;color:#fff;margin-bottom:8px;line-height:1.15}
+.footer-cta p{font-size:.88rem;color:rgba(255,255,255,.48);line-height:1.65;margin-bottom:24px;max-width:460px;margin-left:auto;margin-right:auto}
+.cta-contacts{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
+.cc{display:flex;flex-direction:column;align-items:center;gap:2px}
+.cc-label{font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.26)}
+.cc-value{font-size:.86rem;font-weight:600;color:rgba(255,255,255,.65)}
+.cc-value a{color:rgba(255,255,255,.65);text-decoration:none}
+.cc-sep{width:1px;height:24px;background:rgba(255,255,255,.1)}
+
+.doc-footer{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:space-between}
+.df-t{font-size:.68rem;color:rgba(255,255,255,.2)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ══ HEADER ══ -->
+  <div class="header">
+    <div class="header-inner">
+      <div class="logo-row">
+        <div class="logo-sq">R</div>
+        <div>
+          <div class="logo-name">Rise Agência</div>
+          <div class="logo-sub">Design · Estratégia · Crescimento</div>
+        </div>
+      </div>
+      <div class="grad-line" style="margin-bottom:40px"></div>
+      <div class="eyebrow">Cardápio de Serviços · 2025</div>
+      <h1>Tudo que sua marca<br>precisa para <em>crescer.</em></h1>
+      <p class="header-sub">Do branding estratégico ao ecossistema digital completo. Escolha o que faz sentido para o momento do seu negócio — ou monte um pacote sob medida.</p>
+      <div class="header-note">
+        <span>💡</span>
+        <span><strong>Condição de lançamento ativa.</strong> Todos os serviços com até <strong>50% OFF</strong> sobre o valor cheio enquanto fechamos nossos primeiros clientes. Preço cheio entra em vigor após o período de portfólio.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       CATEGORIA 1 — BRANDING & IDENTIDADE
+  ══════════════════════════════════ -->
+  <div class="cat-label c-brand">
+    <div class="cat-icon">🎨</div>
+    <div class="cat-title">Branding & Identidade Visual</div>
+    <div class="cat-line"></div>
+  </div>
+
+  <div class="services-grid">
+    <div class="svc-card">
+      <div class="svc-top">
+        <div class="svc-name">Logotipo Profissional</div>
+        <div class="svc-badge sb-pop">Popular</div>
+      </div>
+      <div class="svc-desc">Criação de logotipo estratégico com conceito, variações e manual de uso básico. Entregue em todos os formatos.</div>
+      <div class="svc-includes">
+        <span class="si-tag">2 conceitos</span>
+        <span class="si-tag">3 revisões</span>
+        <span class="si-tag">Todos os formatos</span>
+        <span class="si-tag">Manual básico</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">A partir de</div>
+          <div class="svc-price-full">R$ 1.800</div>
+          <div class="svc-price">R$ 900 <em>único</em></div>
+          <div class="discount-tag">−50% Lançamento</div>
+        </div>
+        <div class="svc-note">Mercado cobra R$ 2.000–4.000</div>
+      </div>
+    </div>
+
+    <div class="svc-card featured">
+      <div class="svc-top">
+        <div class="svc-name">Brand Identity Completo</div>
+        <div class="svc-badge sb-hot">Destaque</div>
+      </div>
+      <div class="svc-desc">Identidade visual completa: logotipo, paleta, tipografia, tom de voz, aplicações e brandbook. A marca do zero ao sistema.</div>
+      <div class="svc-includes">
+        <span class="si-tag">Logotipo</span>
+        <span class="si-tag">Paleta & Tipografia</span>
+        <span class="si-tag">Tom de Voz</span>
+        <span class="si-tag">Brandbook</span>
+        <span class="si-tag">Assets digitais</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">A partir de</div>
+          <div class="svc-price-full">R$ 4.500</div>
+          <div class="svc-price">R$ 2.200 <em>único</em></div>
+          <div class="discount-tag">−51% Lançamento</div>
+        </div>
+        <div class="svc-note">Mercado cobra R$ 6.000–15.000</div>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-top">
+        <div class="svc-name">Redesign de Marca</div>
+      </div>
+      <div class="svc-desc">Modernização de marca existente mantendo reconhecimento. Para negócios que cresceram mas a marca ficou para trás.</div>
+      <div class="svc-includes">
+        <span class="si-tag">Diagnóstico</span>
+        <span class="si-tag">Evolução visual</span>
+        <span class="si-tag">Guia de transição</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">A partir de</div>
+          <div class="svc-price-full">R$ 3.200</div>
+          <div class="svc-price">R$ 1.600 <em>único</em></div>
+          <div class="discount-tag">−50% Lançamento</div>
+        </div>
+        <div class="svc-note">Mercado cobra R$ 4.000–8.000</div>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-top">
+        <div class="svc-name">Materiais de Marca</div>
+      </div>
+      <div class="svc-desc">Cartão de visita, apresentação institucional, papel timbrado, assinatura de e-mail e demais materiais aplicados.</div>
+      <div class="svc-includes">
+        <span class="si-tag">Cartão de visita</span>
+        <span class="si-tag">Apresentação</span>
+        <span class="si-tag">Assets sociais</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">A partir de</div>
+          <div class="svc-price-full">R$ 1.200</div>
+          <div class="svc-price">R$ 600 <em>único</em></div>
+          <div class="discount-tag">−50% Lançamento</div>
+        </div>
+        <div class="svc-note">Por pacote de materiais</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       CATEGORIA 2 — SITES & PRESENÇA DIGITAL
+  ══════════════════════════════════ -->
+  <div class="cat-label c-digital">
+    <div class="cat-icon">🌐</div>
+    <div class="cat-title">Sites & Presença Digital</div>
+    <div class="cat-line"></div>
+  </div>
+
+  <div class="services-grid">
+
+    <!-- FULL WIDTH — SITE PREMIUM -->
+    <div class="svc-card-full">
+      <div class="svc-full-inner">
+        <div class="svc-full-left">
+          <div class="svc-badge sb-hot" style="margin-bottom:10px;display:inline-block">Serviço Principal</div>
+          <div class="svc-name">Site Institucional + Landing Page Premium</div>
+          <div class="svc-desc" style="margin-top:8px">Site completo de alta conversão com design premium, responsivo, otimizado para SEO e hospedado. Inclui formulário inteligente com lead scoring integrado ao CRM.</div>
+          <div class="svc-full-includes">
+            <div class="sfi"><div class="sfi-check sc-p">✓</div>Design premium responsivo</div>
+            <div class="sfi"><div class="sfi-check sc-p">✓</div>Landing page de conversão</div>
+            <div class="sfi"><div class="sfi-check sc-p">✓</div>Formulário inteligente com lead scoring</div>
+            <div class="sfi"><div class="sfi-check sc-p">✓</div>SEO básico e velocidade otimizada</div>
+            <div class="sfi"><div class="sfi-check sc-p">✓</div>Hospedagem no Netlify (1º ano incluso)</div>
+            <div class="sfi"><div class="sfi-check sc-p">✓</div>Integração com CRM e WhatsApp</div>
+          </div>
+        </div>
+        <div class="svc-full-price">
+          <div class="sfp-market">De R$ 7.500</div>
+          <div class="sfp-label">Por (lançamento)</div>
+          <div class="sfp-price">R$ <em>3.800</em></div>
+          <div class="discount-tag" style="margin:6px 0 8px">−49% Lançamento</div>
+          <div class="sfp-note">Pagamento único<br>ou R$ 380/mês em 12x<br><span style="color:#4ADE80;font-weight:600">Incluso em pacotes mensais</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-top">
+        <div class="svc-name">Site One Page</div>
+        <div class="svc-badge sb-new">Novo</div>
+      </div>
+      <div class="svc-desc">Site de página única para negócios que precisam de presença digital rápida e profissional. Ideal para freelancers e pequenos negócios.</div>
+      <div class="svc-includes">
+        <span class="si-tag">Design responsivo</span>
+        <span class="si-tag">5 seções</span>
+        <span class="si-tag">Formulário de contato</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">A partir de</div>
+          <div class="svc-price-full">R$ 2.800</div>
+          <div class="svc-price">R$ 1.400 <em>único</em></div>
+          <div class="discount-tag">−50% Lançamento</div>
+        </div>
+        <div class="svc-note">Entrega em 7 dias</div>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-top">
+        <div class="svc-name">Google Meu Negócio</div>
+      </div>
+      <div class="svc-desc">Configuração e otimização completa do perfil Google. Apareça nas buscas locais, no Maps e destaque sua empresa para quem pesquisa na sua cidade.</div>
+      <div class="svc-includes">
+        <span class="si-tag">Setup completo</span>
+        <span class="si-tag">Fotos otimizadas</span>
+        <span class="si-tag">Palavras-chave locais</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">A partir de</div>
+          <div class="svc-price-full">R$ 700</div>
+          <div class="svc-price">R$ 350 <em>único</em></div>
+          <div class="discount-tag">−50% Lançamento</div>
+        </div>
+        <div class="svc-note">+ R$ 200/mês para gestão</div>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-top">
+        <div class="svc-name">WhatsApp Business</div>
+      </div>
+      <div class="svc-desc">Configuração profissional do WhatsApp Business com catálogo, respostas automáticas, mensagem de ausência e perfil otimizado.</div>
+      <div class="svc-includes">
+        <span class="si-tag">Perfil completo</span>
+        <span class="si-tag">Catálogo de produtos</span>
+        <span class="si-tag">Respostas rápidas</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">A partir de</div>
+          <div class="svc-price-full">R$ 500</div>
+          <div class="svc-price">R$ 250 <em>único</em></div>
+          <div class="discount-tag">−50% Lançamento</div>
+        </div>
+        <div class="svc-note">Incluso em pacotes</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       CATEGORIA 3 — MARKETING & TRÁFEGO
+  ══════════════════════════════════ -->
+  <div class="cat-label c-mkt">
+    <div class="cat-icon">📣</div>
+    <div class="cat-title">Marketing & Tráfego Pago</div>
+    <div class="cat-line"></div>
+  </div>
+
+  <div class="services-grid">
+    <div class="svc-card">
+      <div class="svc-top">
+        <div class="svc-name">Gestão de Tráfego Pago</div>
+        <div class="svc-badge sb-pop">Popular</div>
+      </div>
+      <div class="svc-desc">Criação, gestão e otimização de campanhas no Meta Ads (Instagram/Facebook) e Google Ads. Segmentação estratégica, relatório mensal.</div>
+      <div class="svc-includes">
+        <span class="si-tag">Meta Ads</span>
+        <span class="si-tag">Google Ads</span>
+        <span class="si-tag">Segmentação</span>
+        <span class="si-tag">Relatório mensal</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">Mensalidade</div>
+          <div class="svc-price-full">R$ 2.200<em> /mês</em></div>
+          <div class="svc-price">R$ 1.200 <em>/mês</em></div>
+          <div class="discount-tag">−45% Lançamento</div>
+        </div>
+        <div class="svc-note">Verba de mídia paga à parte</div>
+      </div>
+    </div>
+
+    <div class="svc-card featured">
+      <div class="svc-top">
+        <div class="svc-name">Estratégia + Gestão de Redes Sociais</div>
+        <div class="svc-badge sb-hot">Combo</div>
+      </div>
+      <div class="svc-desc">Pacote completo de marketing de conteúdo: estratégia + execução. Posicionamento, persona e calendário editorial somados à criação e publicação mensal no Instagram.</div>
+      <div class="svc-includes">
+        <span class="si-tag">Persona & Tom de voz</span>
+        <span class="si-tag">Calendário 90 dias</span>
+        <span class="si-tag">12 posts/mês</span>
+        <span class="si-tag">4 stories/semana</span>
+        <span class="si-tag">Arte + legenda</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">Mensalidade</div>
+          <div class="svc-price-full">R$ 2.700<em> /mês</em></div>
+          <div class="svc-price">R$ 1.500 <em>/mês</em></div>
+          <div class="discount-tag">−44% Lançamento</div>
+        </div>
+        <div class="svc-note">Estratégia + gestão vendidas juntas</div>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-top">
+        <div class="svc-name">SEO Local</div>
+        <div class="svc-badge sb-new">Novo</div>
+      </div>
+      <div class="svc-desc">Otimização para aparecer nas buscas locais do Google. Palavras-chave, metatags, velocidade de site e citações locais.</div>
+      <div class="svc-includes">
+        <span class="si-tag">Auditoria SEO</span>
+        <span class="si-tag">Palavras-chave</span>
+        <span class="si-tag">On-page</span>
+        <span class="si-tag">Google Maps</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">A partir de</div>
+          <div class="svc-price-full">R$ 1.200<em> /mês</em></div>
+          <div class="svc-price">R$ 600 <em>/mês</em></div>
+          <div class="discount-tag">−50% Lançamento</div>
+        </div>
+        <div class="svc-note">Resultados em 60–90 dias</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       CATEGORIA 4 — CRM & GESTÃO DE LEADS
+  ══════════════════════════════════ -->
+  <div class="cat-label c-crm">
+    <div class="cat-icon">🏷️</div>
+    <div class="cat-title">CRM & Gestão de Leads</div>
+    <div class="cat-line"></div>
+  </div>
+
+  <div class="services-grid">
+    <div class="svc-card featured">
+      <div class="svc-top">
+        <div class="svc-name">CRM Configurado (Komo)</div>
+        <div class="svc-badge sb-pop">Popular</div>
+      </div>
+      <div class="svc-desc">Configuração completa do CRM Komo com pipeline de vendas, tags de temperatura de lead (🔥🌡️❄️), campos personalizados e integração com formulário.</div>
+      <div class="svc-includes">
+        <span class="si-tag">Pipeline estruturado</span>
+        <span class="si-tag">Tags automáticas</span>
+        <span class="si-tag">Lead scoring</span>
+        <span class="si-tag">Treinamento incluso</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">Setup único</div>
+          <div class="svc-price-full">R$ 1.500</div>
+          <div class="svc-price">R$ 700 <em>único</em></div>
+          <div class="discount-tag">−53% Lançamento</div>
+        </div>
+        <div class="svc-note">Mercado cobra R$ 2.500–5.000</div>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-top">
+        <div class="svc-name">Formulário Inteligente</div>
+        <div class="svc-badge sb-hot">Exclusivo</div>
+      </div>
+      <div class="svc-desc">Formulário em 3 etapas com lead scoring automático, trilha calculada por idade e redirecionamento personalizado ao WhatsApp com mensagem pré-preenchida.</div>
+      <div class="svc-includes">
+        <span class="si-tag">3 etapas</span>
+        <span class="si-tag">Lead scoring</span>
+        <span class="si-tag">WhatsApp redirect</span>
+        <span class="si-tag">CRM integrado</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">Projeto único</div>
+          <div class="svc-price-full">R$ 1.600</div>
+          <div class="svc-price">R$ 800 <em>único</em></div>
+          <div class="discount-tag">−50% Lançamento</div>
+        </div>
+        <div class="svc-note">Incluso nos pacotes de site</div>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-top">
+        <div class="svc-name">Gestão de CRM Mensal</div>
+      </div>
+      <div class="svc-desc">Manutenção, atualização e análise do CRM. Relatório de leads, conversão por etapa e recomendações comerciais mensais.</div>
+      <div class="svc-includes">
+        <span class="si-tag">Atualização pipeline</span>
+        <span class="si-tag">Relatório mensal</span>
+        <span class="si-tag">Análise de conversão</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">Mensalidade</div>
+          <div class="svc-price-full">R$ 800<em> /mês</em></div>
+          <div class="svc-price">R$ 400 <em>/mês</em></div>
+          <div class="discount-tag">−50% Lançamento</div>
+        </div>
+        <div class="svc-note">Incluso em pacotes</div>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-top">
+        <div class="svc-name">Script Comercial</div>
+        <div class="svc-badge sb-new">Novo</div>
+      </div>
+      <div class="svc-desc">Criação de scripts personalizados de abordagem para cada temperatura de lead. A equipe comercial sabe exatamente o que dizer para cada perfil.</div>
+      <div class="svc-includes">
+        <span class="si-tag">Script 🔥 Quente</span>
+        <span class="si-tag">Script 🌡️ Morno</span>
+        <span class="si-tag">Script ❄️ Frio</span>
+        <span class="si-tag">Treinamento</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">Projeto único</div>
+          <div class="svc-price-full">R$ 900</div>
+          <div class="svc-price">R$ 450 <em>único</em></div>
+          <div class="discount-tag">−50% Lançamento</div>
+        </div>
+        <div class="svc-note">Incluso em pacotes</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       CATEGORIA 5 — AUTOMAÇÃO (EM BREVE)
+  ══════════════════════════════════ -->
+  <div class="cat-label c-auto">
+    <div class="cat-icon">🤖</div>
+    <div class="cat-title">Automação & Nutrição de Leads</div>
+    <div class="cat-line"></div>
+  </div>
+
+  <div class="services-grid">
+    <div class="svc-card" style="opacity:.65">
+      <div class="svc-top">
+        <div class="svc-name">Automação WhatsApp</div>
+        <div class="svc-badge sb-soon">Em breve</div>
+      </div>
+      <div class="svc-desc">Sequências automáticas de WhatsApp por temperatura de lead. Nutrição, follow-up e reativação sem esforço manual.</div>
+      <div class="svc-includes">
+        <span class="si-tag">Sequência 🔥</span>
+        <span class="si-tag">Sequência 🌡️</span>
+        <span class="si-tag">Reativação ❄️</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">Em breve</div>
+          <div class="svc-price">R$ 800 <em>/mês</em></div>
+        </div>
+        <div class="svc-note">Momento 2 dos pacotes</div>
+      </div>
+    </div>
+
+    <div class="svc-card" style="opacity:.65">
+      <div class="svc-top">
+        <div class="svc-name">Fluxo de E-mail</div>
+        <div class="svc-badge sb-soon">Em breve</div>
+      </div>
+      <div class="svc-desc">Criação de sequências de e-mail para nutrição de leads frios e mornos. Conteúdo educativo que aquece e converte.</div>
+      <div class="svc-includes">
+        <span class="si-tag">5 e-mails/sequência</span>
+        <span class="si-tag">Segmentação</span>
+        <span class="si-tag">A/B testing</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">Em breve</div>
+          <div class="svc-price">R$ 600 <em>/mês</em></div>
+        </div>
+        <div class="svc-note">Momento 2 dos pacotes</div>
+      </div>
+    </div>
+
+    <div class="svc-card" style="opacity:.65">
+      <div class="svc-top">
+        <div class="svc-name">Agendamento Automático</div>
+        <div class="svc-badge sb-soon">Em breve</div>
+      </div>
+      <div class="svc-desc">Integração de calendário online com disparo automático de link de agendamento para leads quentes. Confirmações e lembretes automáticos.</div>
+      <div class="svc-includes">
+        <span class="si-tag">Cal.com / Calendly</span>
+        <span class="si-tag">Lembretes auto</span>
+        <span class="si-tag">CRM integrado</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">Em breve</div>
+          <div class="svc-price">R$ 400 <em>/mês</em></div>
+        </div>
+        <div class="svc-note">Momento 2 dos pacotes</div>
+      </div>
+    </div>
+
+    <div class="svc-card" style="opacity:.65">
+      <div class="svc-top">
+        <div class="svc-name">Programa de Indicações</div>
+        <div class="svc-badge sb-soon">Em breve</div>
+      </div>
+      <div class="svc-desc">Estruturação de programa de indicações com automação de convites, rastreamento e recompensas para clientes que indicam novos clientes.</div>
+      <div class="svc-includes">
+        <span class="si-tag">Fluxo de convite</span>
+        <span class="si-tag">Rastreamento</span>
+        <span class="si-tag">Recompensas</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">Em breve</div>
+          <div class="svc-price">R$ 500 <em>/mês</em></div>
+        </div>
+        <div class="svc-note">Momento 2 dos pacotes</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══════════════════════════════════
+       PACOTES COMBINADOS
+  ══════════════════════════════════ -->
+  <div class="cat-label c-pack">
+    <div class="cat-icon">📦</div>
+    <div class="cat-title">Pacotes Combinados — Melhor Custo-Benefício</div>
+    <div class="cat-line"></div>
+  </div>
+
+  <div class="packages-grid">
+
+    <!-- STARTER -->
+    <div class="pkg-card">
+      <div class="pkg-head">
+        <div class="pkg-name">Starter</div>
+        <div class="pkg-target">Negócios que estão começando</div>
+      </div>
+      <div class="pkg-price-row">
+        <div class="pkg-price-label">Mensalidade</div>
+        <div class="pkg-price-full">R$ 2.200<em> /mês</em></div>
+        <div class="pkg-price">R$ 1.200 <em>/mês</em></div>
+        <div class="pkg-discount-tag">−45% Lançamento</div>
+      </div>
+      <div class="pkg-items">
+        <div class="pi"><div class="pi-dot"></div>Logotipo profissional</div>
+        <div class="pi"><div class="pi-dot"></div>Site one page responsivo</div>
+        <div class="pi"><div class="pi-dot"></div>WhatsApp Business configurado</div>
+        <div class="pi"><div class="pi-dot"></div>Google Meu Negócio</div>
+        <div class="pi"><div class="pi-dot"></div>Calendário editorial + 4 posts/mês</div>
+        <div class="pi"><div class="pi-dot"></div>Relatório mensal</div>
+      </div>
+      <div class="pkg-foot">
+        <div class="pkg-savings">✓ Economiza ~R$ 2.800/mês</div>
+        <div class="pkg-note">vs. contratar separado</div>
+      </div>
+    </div>
+
+    <!-- GROWTH — RECOMMENDED -->
+    <div class="pkg-card recommended">
+      <div class="pkg-head">
+        <div class="pkg-rec-badge">⭐ Mais Escolhido</div>
+        <div class="pkg-name">Growth</div>
+        <div class="pkg-target">Negócios que querem escalar</div>
+      </div>
+      <div class="pkg-price-row">
+        <div class="pkg-price-label">Mensalidade</div>
+        <div class="pkg-price-full">R$ 4.900<em> /mês</em></div>
+        <div class="pkg-price">R$ 2.800 <em>/mês</em></div>
+        <div class="pkg-discount-tag">−43% Lançamento</div>
+      </div>
+      <div class="pkg-items">
+        <div class="pi"><div class="pi-dot"></div>Brand Identity completo</div>
+        <div class="pi"><div class="pi-dot"></div>Site + Landing Page premium</div>
+        <div class="pi"><div class="pi-dot"></div>Formulário inteligente + lead scoring</div>
+        <div class="pi"><div class="pi-dot"></div>CRM Komo configurado</div>
+        <div class="pi"><div class="pi-dot"></div>Gestão de tráfego Meta + Google</div>
+        <div class="pi"><div class="pi-dot"></div>Estratégia + Gestão de Redes Sociais</div>
+        <div class="pi"><div class="pi-dot"></div>Relatório mensal completo</div>
+        <div class="pi"><div class="pi-dot"></div>Treinamento equipe comercial</div>
+      </div>
+      <div class="pkg-foot">
+        <div class="pkg-savings">✓ Economiza ~R$ 18.000/ano</div>
+        <div class="pkg-note">vs. contratar separado</div>
+      </div>
+    </div>
+
+    <!-- SCALE -->
+    <div class="pkg-card">
+      <div class="pkg-head">
+        <div class="pkg-name">Scale</div>
+        <div class="pkg-target">Ecossistema completo + automação</div>
+      </div>
+      <div class="pkg-price-row">
+        <div class="pkg-price-label">Mensalidade</div>
+        <div class="pkg-price-full">R$ 7.500<em> /mês</em></div>
+        <div class="pkg-price">R$ 4.200 <em>/mês</em></div>
+        <div class="pkg-discount-tag">−44% Lançamento</div>
+      </div>
+      <div class="pkg-items">
+        <div class="pi"><div class="pi-dot"></div>Tudo do pacote Growth</div>
+        <div class="pi"><div class="pi-dot"></div>Automações WhatsApp (Momento 2)</div>
+        <div class="pi"><div class="pi-dot"></div>Fluxo de e-mail + nutrição</div>
+        <div class="pi"><div class="pi-dot"></div>Agendamento automático</div>
+        <div class="pi"><div class="pi-dot"></div>Programa de indicações</div>
+        <div class="pi"><div class="pi-dot"></div>Estratégia + Gestão de Redes Sociais</div>
+        <div class="pi"><div class="pi-dot"></div>Reunião estratégica quinzenal</div>
+      </div>
+      <div class="pkg-foot">
+        <div class="pkg-savings">✓ Ecossistema 100% automatizado</div>
+        <div class="pkg-note">Disponível no Momento 2</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DISCOUNT NOTE -->
+  <div class="discount-note">
+    <div class="dn-icon">🎁</div>
+    <div class="dn-text">
+      <strong>Condição especial de lançamento:</strong> Os valores acima já refletem o desconto de lançamento aplicado sobre os preços cheios da Rise. Não há taxa de setup, contrato é mensal sem fidelidade mínima, e em contrapartida pedimos depoimento e autorização para usar o projeto no nosso portfólio. <strong>O preço cheio entra em vigor após esse período inicial.</strong>
+    </div>
+  </div>
+
+  <!-- NOTES -->
+  <div class="notes-grid">
+    <div class="note-card">
+      <div class="note-q">A verba de mídia está inclusa?</div>
+      <div class="note-a">Não. A verba investida em anúncios (Meta Ads, Google Ads) é paga diretamente pelo cliente nas plataformas. Recomendamos mínimo de R$ 500–1.000/mês para começar.</div>
+    </div>
+    <div class="note-card">
+      <div class="note-q">Qual o prazo de entrega?</div>
+      <div class="note-a">Site completo: 2–3 semanas. Branding: 1–2 semanas. CRM + formulário: 1 semana. Tráfego: campanhas no ar em até 5 dias úteis após aprovação.</div>
+    </div>
+    <div class="note-card">
+      <div class="note-q">Qual a fidelidade mínima?</div>
+      <div class="note-a">Nenhuma. Contrato mensal com cancelamento a qualquer momento. Acreditamos que você continua porque os resultados aparecem — não porque está preso.</div>
+    </div>
+    <div class="note-card">
+      <div class="note-q">Posso montar um pacote personalizado?</div>
+      <div class="note-a">Sim. Os pacotes são sugestões. Você pode escolher apenas os serviços que fazem sentido para o momento do seu negócio. Orçamento sem compromisso.</div>
+    </div>
+    <div class="note-card">
+      <div class="note-q">O site fica comigo se cancelar?</div>
+      <div class="note-a">Sim. O site, o branding e todos os materiais são seus. Você recebe todos os arquivos e acesso completo. Nada fica retido conosco.</div>
+    </div>
+    <div class="note-card">
+      <div class="note-q">Como funciona o suporte?</div>
+      <div class="note-a">Suporte via WhatsApp em horário comercial. Clientes de pacotes mensais têm prioridade de atendimento e reunião mensal de alinhamento incluída.</div>
+    </div>
+  </div>
+
+  <!-- FOOTER CTA -->
+  <div class="footer-cta">
+    <div class="footer-cta-inner">
+      <div class="eyebrow" style="justify-content:center;margin-bottom:14px">
+        <span>—</span> Próximo passo <span>—</span>
+      </div>
+      <h3>Vamos conversar sobre<br>o seu negócio?</h3>
+      <p>Sem compromisso. Em 30 minutos conseguimos entender o momento da sua empresa e indicar qual serviço ou pacote faz mais sentido pra você agora.</p>
+      <div class="cta-contacts">
+        <div class="cc">
+          <div class="cc-label">WhatsApp</div>
+          <div class="cc-value"><a href="https://wa.me/5592991755756">(92) 9 9175-5756</a></div>
+        </div>
+        <div class="cc-sep"></div>
+        <div class="cc">
+          <div class="cc-label">E-mail</div>
+          <div class="cc-value"><a href="mailto:molinariseabra@gmail.com">molinariseabra@gmail.com</a></div>
+        </div>
+        <div class="cc-sep"></div>
+        <div class="cc">
+          <div class="cc-label">Instagram</div>
+          <div class="cc-value"><a href="https://instagram.com/by.risedsgn">@by.risedsgn</a></div>
+        </div>
+        <div class="cc-sep"></div>
+        <div class="cc">
+          <div class="cc-label">Site</div>
+          <div class="cc-value"><a href="https://www.riseagencia.com">riseagencia.com</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="doc-footer">
+    <div class="df-t">Rise Agência · Cardápio de Serviços · 2025 · Preços sujeitos a alteração sem aviso prévio.</div>
+    <div class="df-t">v1.0</div>
+  </div>
+
+</div>
+</body>
+</html>
