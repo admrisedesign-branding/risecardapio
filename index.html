@@ -23,9 +23,9 @@ body{
 /* ── UTILS ── */
 .grad-line{
   height:2px;
-  background:linear-gradient(90deg,#6C3FFF 0%,#9B6BFF 35%,#FF4D00 70%,#FF7A3D 100%);
+  background:linear-gradient(90deg,#FF8C00 0%,#FF4D00 35%,#FF7A3D 70%,#FFB347 100%);
   border-radius:2px;
-  box-shadow:0 0 16px rgba(108,63,255,.5),0 0 8px rgba(255,77,0,.3);
+  box-shadow:0 0 16px rgba(255,77,0,.55),0 0 8px rgba(255,140,0,.35);
 }
 .divider{border:none;border-top:1px solid rgba(255,255,255,.06);margin:52px 0}
 
@@ -34,7 +34,7 @@ body{
 .header::before{
   content:'';position:absolute;
   width:600px;height:500px;border-radius:50%;
-  background:radial-gradient(circle,rgba(108,63,255,.18) 0%,transparent 65%);
+  background:radial-gradient(circle,rgba(255,77,0,.18) 0%,transparent 65%);
   top:-200px;right:-160px;filter:blur(70px);pointer-events:none;
 }
 .header::after{
@@ -46,7 +46,7 @@ body{
 .header-inner{position:relative;z-index:1}
 .logo-row{display:flex;align-items:center;gap:10px;margin-bottom:52px}
 .logo-sq{
-  width:38px;height:38px;background:#6C3FFF;border-radius:8px;
+  width:38px;height:38px;background:#FF4D00;border-radius:8px;
   display:flex;align-items:center;justify-content:center;
   font-family:'Cabinet Grotesk',sans-serif;font-weight:900;font-size:15px;color:#fff;
 }
@@ -54,9 +54,9 @@ body{
 .logo-sub{font-size:.65rem;color:rgba(255,255,255,.35);margin-top:1px}
 .eyebrow{
   font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
-  color:#6C3FFF;display:flex;align-items:center;gap:8px;margin-bottom:12px;
+  color:#FF4D00;display:flex;align-items:center;gap:8px;margin-bottom:12px;
 }
-.eyebrow::before{content:'';width:14px;height:2px;background:#6C3FFF;border-radius:1px}
+.eyebrow::before{content:'';width:14px;height:2px;background:#FF4D00;border-radius:1px}
 .header h1{
   font-family:'Cabinet Grotesk',sans-serif;
   font-size:clamp(2rem,4.5vw,3rem);font-weight:900;
@@ -66,11 +66,11 @@ body{
 .header-sub{font-size:.95rem;color:rgba(255,255,255,.5);line-height:1.72;max-width:560px;margin-bottom:28px}
 .header-note{
   display:inline-flex;align-items:center;gap:8px;
-  background:rgba(108,63,255,.1);border:1px solid rgba(108,63,255,.22);
+  background:rgba(255,77,0,.1);border:1px solid rgba(255,77,0,.22);
   border-radius:8px;padding:9px 16px;
   font-size:.8rem;color:rgba(255,255,255,.55);line-height:1.5;
 }
-.header-note strong{color:#A78BFF;font-weight:600}
+.header-note strong{color:#FFB088;font-weight:600}
 
 /* ── CATEGORY LABEL ── */
 .cat-label{
@@ -89,9 +89,9 @@ body{
 .cat-line{flex:1;height:1px;background:rgba(255,255,255,.06)}
 
 /* category colors */
-.c-brand .cat-icon{background:rgba(108,63,255,.15);border:1px solid rgba(108,63,255,.25)}
-.c-brand .cat-title{color:#9B6BFF}
-.c-digital .cat-icon{background:rgba(255,85,0,.12);border:1px solid rgba(255,85,0,.22)}
+.c-brand .cat-icon{background:rgba(255,140,0,.15);border:1px solid rgba(255,140,0,.28)}
+.c-brand .cat-title{color:#FFB347}
+.c-digital .cat-icon{background:rgba(255,77,0,.12);border:1px solid rgba(255,77,0,.22)}
 .c-digital .cat-title{color:#FF8C55}
 .c-mkt .cat-icon{background:rgba(234,179,8,.10);border:1px solid rgba(234,179,8,.2)}
 .c-mkt .cat-title{color:#FCD34D}
@@ -116,15 +116,15 @@ body{
 }
 .svc-card:hover{border-color:rgba(255,255,255,.14);transform:translateY(-2px)}
 .svc-card.featured{
-  border-color:rgba(108,63,255,.28);
-  background:rgba(108,63,255,.06);
+  border-color:rgba(255,77,0,.28);
+  background:rgba(255,77,0,.06);
 }
-.svc-card.featured:hover{border-color:rgba(108,63,255,.45)}
+.svc-card.featured:hover{border-color:rgba(255,77,0,.45)}
 
 /* accent top line on featured */
 .svc-card.featured::before{
   content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,#6C3FFF,#9B6BFF);
+  background:linear-gradient(90deg,#FF4D00,#FF7A3D);
 }
 
 .svc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:10px}
@@ -136,7 +136,7 @@ body{
   font-size:.62rem;font-weight:700;padding:2px 8px;border-radius:4px;
   white-space:nowrap;flex-shrink:0;margin-top:2px;
 }
-.sb-pop{background:rgba(108,63,255,.16);border:1px solid rgba(108,63,255,.28);color:#A78BFF}
+.sb-pop{background:rgba(255,77,0,.16);border:1px solid rgba(255,77,0,.28);color:#FFB088}
 .sb-new{background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.22);color:#4ADE80}
 .sb-hot{background:rgba(255,85,0,.12);border:1px solid rgba(255,85,0,.22);color:#FF8C55}
 .sb-soon{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.35)}
@@ -189,14 +189,14 @@ body{
 /* ── DESTAQUE / FEATURED FULL WIDTH ── */
 .svc-card-full{
   grid-column:1/-1;
-  background:linear-gradient(135deg,rgba(108,63,255,.10) 0%,rgba(255,85,0,.06) 100%);
-  border:1px solid rgba(108,63,255,.25);
+  background:linear-gradient(135deg,rgba(255,77,0,.10) 0%,rgba(255,85,0,.06) 100%);
+  border:1px solid rgba(255,77,0,.25);
   border-radius:12px;padding:26px 24px;
   position:relative;overflow:hidden;
 }
 .svc-card-full::before{
   content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,#6C3FFF 0%,#9B6BFF 35%,#FF4D00 70%,#FF7A3D 100%);
+  background:linear-gradient(90deg,#FF8C00 0%,#FF4D00 35%,#FF7A3D 70%,#FFB347 100%);
 }
 .svc-full-inner{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
 @media(max-width:640px){.svc-full-inner{grid-template-columns:1fr}}
@@ -208,12 +208,12 @@ body{
   width:18px;height:18px;border-radius:4px;flex-shrink:0;
   display:flex;align-items:center;justify-content:center;font-size:.6rem;
 }
-.sc-p{background:rgba(108,63,255,.18);border:1px solid rgba(108,63,255,.3);color:#A78BFF}
+.sc-p{background:rgba(255,77,0,.18);border:1px solid rgba(255,77,0,.3);color:#FFB088}
 .svc-full-price{text-align:right}
 .sfp-market{font-size:.75rem;color:rgba(255,255,255,.25);text-decoration:line-through;margin-bottom:4px}
 .sfp-label{font-size:.62rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:4px}
 .sfp-price{font-family:'Cabinet Grotesk',sans-serif;font-size:2rem;font-weight:900;color:#fff;line-height:1;margin-bottom:6px}
-.sfp-price em{font-style:normal;color:#A78BFF}
+.sfp-price em{font-style:normal;color:#FFB088}
 .sfp-note{font-size:.72rem;color:rgba(255,255,255,.35);line-height:1.45}
 
 /* ── PACKAGES ── */
@@ -229,16 +229,16 @@ body{
 }
 .pkg-card:hover{border-color:rgba(255,255,255,.14)}
 .pkg-card.recommended{
-  border-color:rgba(108,63,255,.35);
-  background:rgba(108,63,255,.06);
+  border-color:rgba(255,77,0,.35);
+  background:rgba(255,77,0,.06);
 }
 .pkg-head{padding:20px 20px 16px;border-bottom:1px solid rgba(255,255,255,.06)}
-.pkg-card.recommended .pkg-head{background:rgba(108,63,255,.08)}
+.pkg-card.recommended .pkg-head{background:rgba(255,77,0,.08)}
 .pkg-rec-badge{
   display:inline-block;
-  background:rgba(108,63,255,.2);border:1px solid rgba(108,63,255,.35);
+  background:rgba(255,77,0,.2);border:1px solid rgba(255,77,0,.35);
   border-radius:5px;padding:2px 8px;
-  font-size:.62rem;font-weight:700;color:#A78BFF;
+  font-size:.62rem;font-weight:700;color:#FFB088;
   margin-bottom:10px;
 }
 .pkg-name{font-family:'Cabinet Grotesk',sans-serif;font-size:1rem;font-weight:900;color:#fff;margin-bottom:4px}
@@ -256,7 +256,7 @@ body{
 }
 .pkg-price-full em{font-style:normal;font-size:.7rem;font-weight:500}
 .pkg-price{font-family:'Cabinet Grotesk',sans-serif;font-size:1.6rem;font-weight:900;color:#fff;line-height:1}
-.pkg-card.recommended .pkg-price{color:#A78BFF}
+.pkg-card.recommended .pkg-price{color:#FFB088}
 .pkg-price em{font-style:normal;font-size:.85rem;font-weight:500;color:rgba(255,255,255,.4)}
 .pkg-discount-tag{
   display:inline-flex;align-items:center;
@@ -271,7 +271,7 @@ body{
 .pi{display:flex;align-items:flex-start;gap:8px;font-size:.78rem;color:rgba(255,255,255,.5);margin-bottom:8px;line-height:1.4}
 .pi:last-child{margin-bottom:0}
 .pi-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.2);flex-shrink:0;margin-top:5px}
-.pkg-card.recommended .pi-dot{background:rgba(108,63,255,.6)}
+.pkg-card.recommended .pi-dot{background:rgba(255,77,0,.6)}
 .pkg-foot{padding:14px 20px;border-top:1px solid rgba(255,255,255,.06)}
 .pkg-savings{font-size:.72rem;color:#4ADE80;font-weight:600}
 .pkg-note{font-size:.68rem;color:rgba(255,255,255,.3);margin-top:2px}
@@ -296,13 +296,13 @@ body{
 
 /* ── FOOTER CTA ── */
 .footer-cta{
-  background:rgba(108,63,255,.08);border:1px solid rgba(108,63,255,.2);
+  background:rgba(255,77,0,.08);border:1px solid rgba(255,77,0,.2);
   border-radius:14px;padding:36px 40px;text-align:center;
   position:relative;overflow:hidden;
 }
 .footer-cta::before{
   content:'';position:absolute;width:350px;height:250px;border-radius:50%;
-  background:radial-gradient(circle,rgba(108,63,255,.15) 0%,transparent 70%);
+  background:radial-gradient(circle,rgba(255,77,0,.15) 0%,transparent 70%);
   top:-80px;right:-60px;filter:blur(50px);
 }
 .footer-cta::after{
@@ -849,7 +849,6 @@ body{
         <div class="pkg-discount-tag">−45% Lançamento</div>
       </div>
       <div class="pkg-items">
-        <div class="pi"><div class="pi-dot"></div>Logotipo profissional</div>
         <div class="pi"><div class="pi-dot"></div>Site one page responsivo</div>
         <div class="pi"><div class="pi-dot"></div>WhatsApp Business configurado</div>
         <div class="pi"><div class="pi-dot"></div>Google Meu Negócio</div>
@@ -876,7 +875,6 @@ body{
         <div class="pkg-discount-tag">−43% Lançamento</div>
       </div>
       <div class="pkg-items">
-        <div class="pi"><div class="pi-dot"></div>Brand Identity completo</div>
         <div class="pi"><div class="pi-dot"></div>Site + Landing Page premium</div>
         <div class="pi"><div class="pi-dot"></div>Formulário inteligente + lead scoring</div>
         <div class="pi"><div class="pi-dot"></div>CRM Komo configurado</div>
@@ -905,11 +903,11 @@ body{
       </div>
       <div class="pkg-items">
         <div class="pi"><div class="pi-dot"></div>Tudo do pacote Growth</div>
+        <div class="pi"><div class="pi-dot"></div><strong>Brand Identity completo</strong></div>
         <div class="pi"><div class="pi-dot"></div>Automações WhatsApp (Momento 2)</div>
         <div class="pi"><div class="pi-dot"></div>Fluxo de e-mail + nutrição</div>
         <div class="pi"><div class="pi-dot"></div>Agendamento automático</div>
         <div class="pi"><div class="pi-dot"></div>Programa de indicações</div>
-        <div class="pi"><div class="pi-dot"></div>Estratégia + Gestão de Redes Sociais</div>
         <div class="pi"><div class="pi-dot"></div>Reunião estratégica quinzenal</div>
       </div>
       <div class="pkg-foot">
