@@ -9,7 +9,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Proposta RISE — Site & Ingressos · Parque Bambuí">
 <meta property="og:description" content="Site institucional + venda de ingressos para o Parque Bambuí. Cenários a partir de R$ 6.500.">
-<meta property="og:url" content="https://risecardapio.vercel.app/parque-bambui">
+<meta property="og:url" content="https://orcamento.riseagencia.com/parque-bambui">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -127,12 +127,14 @@
 
   /* ---------- scenarios ---------- */
   .scn{
+    position:relative;
     background:var(--card);border:1px solid var(--line);border-radius:16px;
     padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column;
   }
-  .scn.best{background:linear-gradient(180deg,#fff, #fff);border-color:var(--orange);box-shadow:0 0 0 1px var(--orange),var(--shadow)}
+  .scn.best{background:linear-gradient(180deg,#fff, #fff);border-color:var(--orange);box-shadow:0 0 0 1px var(--orange),var(--shadow);padding-top:30px}
+  .scn .tag{white-space:nowrap}
   .scn .name{font-size:17px;font-weight:700}
-  .scn .what{font-size:13.5px;color:var(--muted);margin:6px 0 14px;flex:1}
+  .scn .what{font-size:13.5px;color:var(--muted);margin:6px 0 16px}
   .scn .tot{font-family:'Fraunces',serif;font-size:26px;font-weight:600}
   .scn .tot small{font-family:'DM Sans',sans-serif;font-size:13px;color:var(--muted);font-weight:500}
   .scn .recur{font-size:12.5px;color:var(--muted);margin-top:2px}
@@ -146,6 +148,29 @@
   .term ul{gap:6px}
   .term ul li{padding-left:18px}
   .term ul li::before{width:9px;height:9px;top:7px;background-image:radial-gradient(circle at 50% 50%,var(--orange) 0 2.3px,transparent 2.5px)}
+
+  .tabela{font-size:13.5px;color:var(--muted);text-decoration:line-through;line-height:1.2;margin-bottom:1px}
+  .disc{display:inline-block;margin:8px 0 2px;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:var(--orange-tint);color:var(--orange);padding:4px 10px;border-radius:99px}
+  .scn .tabela{margin-top:4px}
+
+  /* ---------- portfolio / proof ---------- */
+  .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.pgrid{grid-template-columns:1fr}}
+  .pcard{
+    display:flex;flex-direction:column;justify-content:space-between;gap:18px;
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:22px;box-shadow:var(--shadow);text-decoration:none;color:var(--ink);
+    transition:transform .15s ease,border-color .15s ease;min-height:140px;
+  }
+  .pcard:hover{transform:translateY(-2px);border-color:var(--orange)}
+  .pcard .pcat{font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--orange)}
+  .pcard .pname{font-size:19px;font-weight:700;margin-top:4px}
+  .pcard .pdesc{font-size:13.5px;color:var(--muted);margin-top:4px}
+  .pcard .plink{font-size:14px;font-weight:700;color:var(--forest)}
+  .pcard.allp{background:var(--forest);border-color:var(--forest)}
+  .pcard.allp .pcat{color:var(--orange-soft)}
+  .pcard.allp .pname,.pcard.allp .plink{color:#fff}
+  .pcard.allp .pdesc{color:#cfe0d4}
 
   /* ---------- footer cta ---------- */
   .cta{
@@ -204,7 +229,9 @@
       <div class="card">
         <div class="kicker">Opção A</div>
         <h3>Site Institucional Essencial</h3>
+        <div class="tabela">Tabela R$ 8.400</div>
         <div class="price">R$ 5.900</div>
+        <span class="disc">−30% tabela</span>
         <div class="mkt">Mercado: R$ 8.000–14.000</div>
         <ul>
           <li>Design exclusivo da RISE, com vídeo no topo</li>
@@ -221,7 +248,9 @@
         <span class="tag">Recomendado</span>
         <div class="kicker">Opção B</div>
         <h3>Site Institucional Premium</h3>
+        <div class="tabela">Tabela R$ 14.000</div>
         <div class="price">R$ 9.800</div>
+        <span class="disc">−30% tabela</span>
         <div class="mkt">Mercado: R$ 12.000–22.000</div>
         <ul>
           <li>Tudo do Essencial, com direção de arte ampliada</li>
@@ -318,21 +347,27 @@
       <div class="scn">
         <div class="name">Vitrine Rápida</div>
         <div class="what">Site Essencial + conectar a bilheteria atual. Presença premium no ar em poucas semanas.</div>
+        <div class="tabela">Tabela R$ 9.300</div>
         <div class="tot">R$ 6.500</div>
+        <span class="disc">−30% tabela</span>
       </div>
 
       <div class="scn best">
         <span class="tag">Melhor custo-benefício</span>
         <div class="name">Premium Completo</div>
         <div class="what">Site Premium + checkout de ingressos dentro do site. A experiência completa, com venda integrada.</div>
+        <div class="tabela">Tabela R$ 16.600</div>
         <div class="tot">R$ 11.600</div>
+        <span class="disc">−30% tabela</span>
         <div class="recur">+ taxa de plataforma por ingresso</div>
       </div>
 
       <div class="scn">
         <div class="name">Plataforma Própria</div>
         <div class="what">Site Premium + bilheteria própria com QR e validação na portaria. Controle total de dados e receita.</div>
+        <div class="tabela">Tabela R$ 38.100</div>
         <div class="tot">R$ 26.700</div>
+        <span class="disc">−30% tabela</span>
         <div class="recur">+ R$ 690/mês</div>
       </div>
 
@@ -371,6 +406,42 @@
           <li>Redação de textos longos (sob combinação)</li>
         </ul>
       </div>
+    </div>
+  </section>
+
+  <!-- 06 PORTFOLIO / PROOF -->
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">06</span><span class="sec-title">Veja o que a RISE já construiu</span></div>
+    <p class="sec-lead">Não é só uma proposta — é o tipo de trabalho que já entregamos. Dê uma olhada em alguns projetos no ar antes de decidir.</p>
+    <div class="pgrid">
+
+      <a class="pcard" href="https://myrobotmanaus.com" target="_blank" rel="noopener">
+        <div>
+          <div class="pcat">Site institucional + CRM</div>
+          <div class="pname">My Robot Manaus</div>
+          <div class="pdesc">Site completo com captação e funil de leads integrado.</div>
+        </div>
+        <div class="plink">Ver site →</div>
+      </a>
+
+      <a class="pcard" href="https://neuroplasticidar.gruposja.com" target="_blank" rel="noopener">
+        <div>
+          <div class="pcat">Plataforma digital</div>
+          <div class="pname">Neuroplasticidar</div>
+          <div class="pdesc">Plataforma com login, blog, loja e área de conteúdo.</div>
+        </div>
+        <div class="plink">Ver site →</div>
+      </a>
+
+      <a class="pcard allp" href="https://riseagencia.com" target="_blank" rel="noopener">
+        <div>
+          <div class="pcat">Portfólio completo</div>
+          <div class="pname">Conheça a RISE</div>
+          <div class="pdesc">Marca, sites e marketing — todos os projetos em um só lugar.</div>
+        </div>
+        <div class="plink">riseagencia.com →</div>
+      </a>
+
     </div>
   </section>
 
