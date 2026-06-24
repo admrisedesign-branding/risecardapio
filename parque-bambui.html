@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orçamento Parque Bambuí · RISE Design & Branding</title>
+<meta name="description" content="Proposta de site institucional e sistema de venda de ingressos para o Parque Bambuí, por RISE Design & Branding.">
+<meta name="theme-color" content="#1E4034">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Proposta RISE — Site & Ingressos · Parque Bambuí">
+<meta property="og:description" content="Site institucional + venda de ingressos para o Parque Bambuí. Cenários a partir de R$ 6.500.">
+<meta property="og:url" content="https://risecardapio.vercel.app/parque-bambui">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --orange:#FF4D00;
+    --orange-soft:#FF7A3D;
+    --orange-tint:#FFE9DE;
+    --forest:#1E4034;
+    --forest-soft:#2E5D45;
+    --forest-tint:#E4EDE6;
+    --ink:#1A1714;
+    --muted:#6B6258;
+    --line:#E9E2D8;
+    --paper:#FAF7F2;
+    --card:#FFFFFF;
+    --shadow:0 1px 2px rgba(26,23,20,.04),0 8px 28px rgba(26,23,20,.06);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'DM Sans',system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:920px;margin:0 auto;padding:0 22px}
+
+  /* ---------- header ---------- */
+  .top{padding:54px 0 28px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;
+    font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--orange);
+  }
+  .eyebrow .dash{width:26px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+  h1{
+    font-family:'Fraunces',Georgia,serif;
+    font-weight:500;
+    font-size:clamp(34px,6.2vw,56px);
+    line-height:1.02;
+    letter-spacing:-.01em;
+    margin:18px 0 6px;
+  }
+  h1 em{font-style:italic;color:var(--forest)}
+  .sub{font-size:18px;color:var(--muted);max-width:60ch}
+  .meta{
+    display:flex;flex-wrap:wrap;gap:10px 26px;
+    margin-top:26px;padding-top:22px;border-top:1px solid var(--line);
+    font-size:13.5px;color:var(--muted);
+  }
+  .meta b{color:var(--ink);font-weight:700}
+
+  /* ---------- intro ---------- */
+  .intro{
+    background:var(--card);border:1px solid var(--line);border-radius:18px;
+    padding:26px 28px;margin:30px 0 8px;box-shadow:var(--shadow);
+    font-size:16px;color:#37322c;
+  }
+  .intro strong{color:var(--ink)}
+  .intro .pin{color:var(--forest);font-weight:700}
+
+  /* ---------- section heads ---------- */
+  .sec{padding:44px 0 6px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+  .sec-num{
+    font-family:'Fraunces',serif;font-size:15px;font-weight:600;
+    color:var(--orange);letter-spacing:.04em;
+  }
+  .sec-title{font-size:24px;font-weight:700;letter-spacing:-.01em}
+  .sec-lead{color:var(--muted);font-size:15px;margin:2px 0 22px;max-width:64ch}
+
+  /* ---------- cards grid ---------- */
+  .grid{display:grid;gap:16px}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  @media(max-width:760px){.g2,.g3{grid-template-columns:1fr}}
+
+  .card{
+    position:relative;background:var(--card);border:1px solid var(--line);
+    border-radius:16px;padding:24px 22px;box-shadow:var(--shadow);
+    display:flex;flex-direction:column;
+  }
+  .card.star{border-color:var(--orange);box-shadow:0 0 0 1px var(--orange),var(--shadow)}
+  .card.forest{border-color:var(--forest-soft);box-shadow:0 0 0 1px var(--forest-soft),var(--shadow)}
+  .tag{
+    position:absolute;top:-11px;left:22px;
+    font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    background:var(--orange);color:#fff;padding:5px 11px;border-radius:99px;
+  }
+  .tag.forest{background:var(--forest)}
+  .card h3{font-size:19px;font-weight:700;margin-bottom:3px}
+  .card .kicker{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:13px}
+  .price{font-family:'Fraunces',serif;font-size:30px;font-weight:600;line-height:1;margin:4px 0 2px}
+  .price small{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;color:var(--muted)}
+  .price .from{font-size:14px;color:var(--muted);font-weight:500;font-family:'DM Sans',sans-serif}
+  .mkt{font-size:12.5px;color:var(--muted);margin-bottom:14px}
+  ul{list-style:none;margin-top:6px;display:flex;flex-direction:column;gap:9px}
+  ul li{position:relative;padding-left:23px;font-size:14.5px;color:#3b362f}
+  ul li::before{
+    content:"";position:absolute;left:0;top:7px;width:13px;height:13px;
+    border-radius:50%;background:var(--orange-tint);
+    background-image:radial-gradient(circle at 50% 50%,var(--orange) 0 3.2px,transparent 3.4px);
+  }
+  ul.forest-check li::before{
+    background:var(--forest-tint);
+    background-image:radial-gradient(circle at 50% 50%,var(--forest) 0 3.2px,transparent 3.4px);
+  }
+  ul li.off{color:var(--muted)}
+  ul li.off::before{background:#f0ece5;background-image:none}
+  .note{margin-top:14px;font-size:13px;color:var(--muted);border-top:1px dashed var(--line);padding-top:12px}
+
+  /* ---------- scenarios ---------- */
+  .scn{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column;
+  }
+  .scn.best{background:linear-gradient(180deg,#fff, #fff);border-color:var(--orange);box-shadow:0 0 0 1px var(--orange),var(--shadow)}
+  .scn .name{font-size:17px;font-weight:700}
+  .scn .what{font-size:13.5px;color:var(--muted);margin:6px 0 14px;flex:1}
+  .scn .tot{font-family:'Fraunces',serif;font-size:26px;font-weight:600}
+  .scn .tot small{font-family:'DM Sans',sans-serif;font-size:13px;color:var(--muted);font-weight:500}
+  .scn .recur{font-size:12.5px;color:var(--muted);margin-top:2px}
+
+  /* ---------- terms ---------- */
+  .terms{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:8px}
+  @media(max-width:760px){.terms{grid-template-columns:1fr}}
+  .term{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+  .term h4{font-size:12.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--orange);margin-bottom:9px}
+  .term p,.term li{font-size:14px;color:#3b362f}
+  .term ul{gap:6px}
+  .term ul li{padding-left:18px}
+  .term ul li::before{width:9px;height:9px;top:7px;background-image:radial-gradient(circle at 50% 50%,var(--orange) 0 2.3px,transparent 2.5px)}
+
+  /* ---------- footer cta ---------- */
+  .cta{
+    margin:46px 0 30px;background:var(--forest);color:#fff;border-radius:22px;
+    padding:42px 34px;text-align:center;
+  }
+  .cta .eyebrow{color:#fff}
+  .cta .eyebrow .dash{background:var(--orange-soft)}
+  .cta h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(26px,4.5vw,38px);line-height:1.08;margin:14px 0 10px}
+  .cta p{color:#cfe0d4;max-width:52ch;margin:0 auto 26px;font-size:15.5px}
+  .contacts{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 34px}
+  .cinfo .cl{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:#9fbaa6;margin-bottom:3px}
+  .cinfo .cv{font-size:15px;font-weight:700}
+  .cinfo .cv a{color:#fff;text-decoration:none}
+  .btn{
+    display:inline-block;margin-bottom:26px;background:var(--orange);color:#fff;
+    text-decoration:none;font-weight:700;font-size:15px;padding:14px 30px;border-radius:99px;
+  }
+
+  .docfoot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+    font-size:12px;color:var(--muted);padding:0 2px 40px}
+
+  @media print{
+    body{background:#fff}
+    .card,.scn,.term,.intro{box-shadow:none}
+    .cta{background:var(--forest)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header class="top">
+    <span class="eyebrow"><span class="dash"></span>Rise Design &amp; Branding</span>
+    <h1>Proposta de<br>Orçamento — <em>Parque Bambuí</em></h1>
+    <p class="sub">Site institucional e sistema de venda de ingressos para o Parque Bambuí, em Campos do Jordão (Grupo Toriba).</p>
+    <div class="meta">
+      <span><b>Preparado para:</b> André Molinari</span>
+      <span><b>Cliente final:</b> Parque Bambuí · Grupo Toriba</span>
+      <span><b>Validade:</b> 15 dias</span>
+    </div>
+  </header>
+
+  <!-- INTRO -->
+  <div class="intro">
+    O Parque Bambuí já tem uma marca forte e um público que cresce a cada temporada — o que falta é uma vitrine digital à altura da experiência. Esta proposta cobre dois pedidos: um <strong>site institucional sob medida</strong> (a vitrine) e a possibilidade de <strong>venda de ingressos online</strong>. <span class="pin">Como o parque já vende ingresso por uma plataforma do grupo, estruturamos a venda em três opções</span> — da integração rápida do que já existe até uma plataforma própria — para que vocês escolham o nível de profundidade sem pagar pelo que não precisam agora.
+  </div>
+
+  <!-- 01 SITE -->
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">01</span><span class="sec-title">O site — a vitrine</span></div>
+    <p class="sec-lead">Design exclusivo, responsivo, rápido e otimizado para busca. Construído para vender a experiência do parque e converter visitas em reservas e ingressos.</p>
+    <div class="grid g2">
+
+      <div class="card">
+        <div class="kicker">Opção A</div>
+        <h3>Site Institucional Essencial</h3>
+        <div class="price">R$ 5.900</div>
+        <div class="mkt">Mercado: R$ 8.000–14.000</div>
+        <ul>
+          <li>Design exclusivo da RISE, com vídeo no topo</li>
+          <li>Páginas: home, atrações, estabelecimentos, atividades, história e localização</li>
+          <li>100% responsivo (celular, tablet, desktop)</li>
+          <li>SEO técnico base + Google Meu Negócio</li>
+          <li>Integração com WhatsApp e redes sociais</li>
+          <li>Formulário de contato e captação de newsletter</li>
+        </ul>
+        <div class="note">Ideal para sair rápido com uma presença premium e organizada.</div>
+      </div>
+
+      <div class="card star">
+        <span class="tag">Recomendado</span>
+        <div class="kicker">Opção B</div>
+        <h3>Site Institucional Premium</h3>
+        <div class="price">R$ 9.800</div>
+        <div class="mkt">Mercado: R$ 12.000–22.000</div>
+        <ul>
+          <li>Tudo do Essencial, com direção de arte ampliada</li>
+          <li>Página individual para cada atração, estabelecimento e atividade</li>
+          <li>Seção de novidades / blog para SEO contínuo</li>
+          <li>SEO avançado + otimização de performance (Core Web Vitals)</li>
+          <li>Painel simples para a equipe editar conteúdos</li>
+          <li>Estrutura pronta para receber o módulo de ingressos</li>
+        </ul>
+        <div class="note">Versão bilíngue PT/EN: <b>+ R$ 1.500</b>.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 02 INGRESSOS -->
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">02</span><span class="sec-title">Venda de ingressos</span></div>
+    <p class="sec-lead">Três caminhos, do mais simples ao mais completo. Dá para começar leve e evoluir para uma plataforma própria quando fizer sentido.</p>
+    <div class="grid g3">
+
+      <div class="card forest">
+        <span class="tag forest">Começar por aqui</span>
+        <div class="kicker">Opção A · Integração</div>
+        <h3>Conectar a bilheteria atual</h3>
+        <div class="price">R$ 600</div>
+        <div class="mkt">Cortesia se fechar o Site Premium</div>
+        <ul class="forest-check">
+          <li>Botão e fluxo de "Comprar ingresso" integrados ao site</li>
+          <li>Usa a plataforma de ingressos que o grupo já tem</li>
+          <li>Sem custo extra de plataforma</li>
+          <li>Entrega imediata, risco zero</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="kicker">Opção B · Embed</div>
+        <h3>Checkout dentro do site</h3>
+        <div class="price"><span class="from">a partir de</span><br>R$ 1.800 <small>setup</small></div>
+        <div class="mkt">+ taxa da plataforma por ingresso</div>
+        <ul>
+          <li>Compra acontece sem sair do site (white-label)</li>
+          <li>Plataforma cuida de pagamento, QR e meia-entrada</li>
+          <li>Controle de capacidade e relatórios prontos</li>
+          <li>Cara de "grande" sem desenvolver do zero</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="kicker">Opção C · Próprio</div>
+        <h3>Plataforma de bilheteria própria</h3>
+        <div class="price"><span class="from">a partir de</span><br>R$ 16.900 <small>setup</small></div>
+        <div class="mkt">+ R$ 690/mês manutenção</div>
+        <ul>
+          <li>Venda por data + controle de lotação</li>
+          <li>Ingresso base + adicionais (Maria-fumaça, barco, bike)</li>
+          <li>Cortesias automáticas (crianças, PCD)</li>
+          <li>Pix e cartão via Mercado Pago, QR e app de validação na portaria</li>
+          <li>Dados e receita 100% no parque</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 03 RECORRENTE -->
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">03</span><span class="sec-title">Presença &amp; manutenção <span style="font-weight:400;color:var(--muted);font-size:16px">(opcional)</span></span></div>
+    <div class="grid g2">
+      <div class="card">
+        <h3>Plano de Presença RISE</h3>
+        <div class="price">R$ 690<small>/mês</small></div>
+        <ul>
+          <li>Hospedagem gerenciada e domínio cuidados pela RISE</li>
+          <li>Atualizações de conteúdo e pequenos ajustes</li>
+          <li>Monitoramento de SEO e performance</li>
+          <li>Suporte prioritário + relatório mensal</li>
+        </ul>
+        <div class="note">Sem fidelidade. Cancela quando quiser.</div>
+      </div>
+      <div class="card" style="justify-content:center;background:var(--forest-tint);border-color:var(--forest-soft)">
+        <h3 style="color:var(--forest)">Por que recorrente?</h3>
+        <p style="font-size:14.5px;color:#33453a;margin-top:6px">Um site de parque muda com a temporada — preços, horários, eventos, fotos novas. O plano garante que o site fique sempre atual e no ar, sem cobrar por cada pequena alteração.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 SCENARIOS -->
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">04</span><span class="sec-title">Cenários recomendados</span></div>
+    <p class="sec-lead">Combinações prontas para decidir mais fácil. Os valores somam site + ingressos do cenário.</p>
+    <div class="grid g3">
+
+      <div class="scn">
+        <div class="name">Vitrine Rápida</div>
+        <div class="what">Site Essencial + conectar a bilheteria atual. Presença premium no ar em poucas semanas.</div>
+        <div class="tot">R$ 6.500</div>
+      </div>
+
+      <div class="scn best">
+        <span class="tag">Melhor custo-benefício</span>
+        <div class="name">Premium Completo</div>
+        <div class="what">Site Premium + checkout de ingressos dentro do site. A experiência completa, com venda integrada.</div>
+        <div class="tot">R$ 11.600</div>
+        <div class="recur">+ taxa de plataforma por ingresso</div>
+      </div>
+
+      <div class="scn">
+        <div class="name">Plataforma Própria</div>
+        <div class="what">Site Premium + bilheteria própria com QR e validação na portaria. Controle total de dados e receita.</div>
+        <div class="tot">R$ 26.700</div>
+        <div class="recur">+ R$ 690/mês</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TERMS -->
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">05</span><span class="sec-title">Condições comerciais</span></div>
+    <div class="terms">
+      <div class="term">
+        <h4>Pagamento</h4>
+        <p>50% para iniciar e 50% na entrega. Em projetos acima de R$ 15.000, parcelamos em 40% / 30% / 30%. Planos mensais cobrados no mês vigente.</p>
+      </div>
+      <div class="term">
+        <h4>Prazos estimados</h4>
+        <ul>
+          <li>Site Essencial: 15 a 20 dias úteis</li>
+          <li>Site Premium: 25 a 35 dias úteis</li>
+          <li>Bilheteria própria: + 30 a 45 dias úteis</li>
+        </ul>
+      </div>
+      <div class="term">
+        <h4>Incluso</h4>
+        <ul>
+          <li>Design, desenvolvimento e responsividade</li>
+          <li>SEO técnico base e publicação (deploy)</li>
+          <li>1 rodada de ajustes por etapa</li>
+        </ul>
+      </div>
+      <div class="term">
+        <h4>Não incluso</h4>
+        <ul>
+          <li>Domínio novo e taxas de plataformas/gateway de terceiros</li>
+          <li>Produção de fotos e vídeos profissionais</li>
+          <li>Redação de textos longos (sob combinação)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <span class="eyebrow"><span class="dash"></span>Próximo passo</span>
+    <h2>Vamos colocar o Parque<br>Bambuí no lugar certo?</h2>
+    <p>Escolhido o cenário, em uma conversa de 30 minutos alinhamos escopo, referências e cronograma para começar.</p>
+    <a class="btn" href="https://wa.me/5592991755756?text=Ol%C3%A1%20RISE!%20Quero%20falar%20sobre%20o%20or%C3%A7amento%20do%20Parque%20Bambu%C3%AD.">Falar no WhatsApp</a>
+    <div class="contacts">
+      <div class="cinfo"><div class="cl">WhatsApp</div><div class="cv"><a href="https://wa.me/5592991755756">(92) 9 9175-5756</a></div></div>
+      <div class="cinfo"><div class="cl">Site</div><div class="cv"><a href="https://riseagencia.com">riseagencia.com</a></div></div>
+      <div class="cinfo"><div class="cl">Instagram</div><div class="cv"><a href="https://instagram.com/by.risedsgn">@by.risedsgn</a></div></div>
+      <div class="cinfo"><div class="cl">E-mail</div><div class="cv"><a href="mailto:adm.risedesign@gmail.com">adm.risedesign@gmail.com</a></div></div>
+    </div>
+  </section>
+
+  <div class="docfoot">
+    <span>RISE Design &amp; Branding · Orçamento Parque Bambuí · Valores sujeitos a alteração após a validade.</span>
+    <span>v1.0</span>
+  </div>
+
+</div>
+</body>
+</html>
