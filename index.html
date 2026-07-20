@@ -90,6 +90,27 @@ body{
   font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
 }
 .cat-line{flex:1;height:1px;background:rgba(255,255,255,.06)}
+.cat-titles{display:flex;flex-direction:column;gap:1px}
+.cat-sub{font-family:'Instrument Sans',sans-serif;font-size:.74rem;font-weight:400;letter-spacing:0;text-transform:none;color:rgba(255,255,255,.32)}
+
+/* ── MID CTA ── */
+.mid-cta{
+  display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  background:rgba(255,77,0,.07);border:1px solid rgba(255,77,0,.18);
+  border-radius:12px;padding:20px 24px;margin-bottom:52px;
+}
+.mid-cta-text strong{display:block;font-family:'Cabinet Grotesk',sans-serif;font-size:1rem;font-weight:800;color:#fff;margin-bottom:3px}
+.mid-cta-text span{font-size:.82rem;color:rgba(255,255,255,.45)}
+.mid-cta-btn{
+  background:#FF4D00;color:#fff;text-decoration:none;font-weight:700;font-size:.82rem;
+  padding:11px 20px;border-radius:8px;white-space:nowrap;transition:opacity .2s;
+}
+.mid-cta-btn:hover{opacity:.88}
+
+/* ── SECTION DIVIDER ── */
+.section-divider{text-align:center;margin:0 0 40px}
+.sd-title{font-family:'Cabinet Grotesk',sans-serif;font-size:1.4rem;font-weight:900;color:#fff;margin-bottom:6px}
+.sd-sub{font-size:.85rem;color:rgba(255,255,255,.4);max-width:440px;margin:0 auto}
 
 /* category colors */
 .c-brand .cat-icon{background:rgba(255,140,0,.15);border:1px solid rgba(255,140,0,.28)}
@@ -346,493 +367,17 @@ body{
       <p class="header-sub">Do branding estratégico ao ecossistema digital completo. Escolha o que faz sentido para o momento do seu negócio — ou monte um pacote sob medida.</p>
       <div class="header-note">
         <span>💡</span>
-        <span><strong>Os valores já refletem cerca de 30% de desconto sobre a tabela cheia.</strong> Você leva o mesmo padrão de entrega por 30% menos.</span>
+        <span><strong>Os valores já refletem cerca de 30% de desconto sobre a tabela cheia.</strong> Mesmo padrão de entrega, por bem menos.</span>
       </div>
     </div>
   </div>
-
-  <!-- ══════════════════════════════════
-       CATEGORIA 1 — BRANDING & IDENTIDADE
-  ══════════════════════════════════ -->
-  <div class="cat-label c-brand">
-    <div class="cat-icon">🎨</div>
-    <div class="cat-title">Branding & Identidade Visual</div>
-    <div class="cat-line"></div>
-  </div>
-
-  <div class="services-grid">
-    <div class="svc-card">
-      <div class="svc-top">
-        <div class="svc-name">Logotipo Profissional</div>
-        <div class="svc-badge sb-pop">Popular</div>
-      </div>
-      <div class="svc-desc">Criação de logotipo estratégico com conceito, variações e manual de uso básico. Entregue em todos os formatos.</div>
-      <div class="svc-includes">
-        <span class="si-tag">2 conceitos</span>
-        <span class="si-tag">3 revisões</span>
-        <span class="si-tag">Todos os formatos</span>
-        <span class="si-tag">Manual básico</span>
-      </div>
-      <div class="svc-bottom">
-        <div>
-          <div class="svc-price-label">A partir de</div>
-          <div class="svc-price-full">R$ 2.500</div>
-          <div class="svc-price">R$ 1.750 <em>único</em></div>
-          <div class="discount-tag">−30% tabela</div>
-        </div>
-        <div class="svc-note">Mercado cobra R$ 2.000–4.000</div>
-      </div>
-    </div>
-
-    <div class="svc-card featured">
-      <div class="svc-top">
-        <div class="svc-name">Brand Identity Completo</div>
-        <div class="svc-badge sb-hot">Destaque</div>
-      </div>
-      <div class="svc-desc">Identidade visual completa: logotipo, paleta, tipografia, tom de voz, aplicações e brandbook. A marca do zero ao sistema.</div>
-      <div class="svc-includes">
-        <span class="si-tag">Logotipo</span>
-        <span class="si-tag">Paleta & Tipografia</span>
-        <span class="si-tag">Tom de Voz</span>
-        <span class="si-tag">Brandbook</span>
-        <span class="si-tag">Assets digitais</span>
-      </div>
-      <div class="svc-bottom">
-        <div>
-          <div class="svc-price-label">A partir de</div>
-          <div class="svc-price-full">R$ 5.000</div>
-          <div class="svc-price">R$ 3.500 <em>único</em></div>
-          <div class="discount-tag">−30% tabela</div>
-        </div>
-        <div class="svc-note">Mercado cobra R$ 6.000–15.000</div>
-      </div>
-    </div>
-
-    <div class="svc-card">
-      <div class="svc-top">
-        <div class="svc-name">Redesign de Marca</div>
-      </div>
-      <div class="svc-desc">Modernização de marca existente mantendo reconhecimento. Para negócios que cresceram mas a marca ficou para trás.</div>
-      <div class="svc-includes">
-        <span class="si-tag">Diagnóstico</span>
-        <span class="si-tag">Evolução visual</span>
-        <span class="si-tag">Guia de transição</span>
-      </div>
-      <div class="svc-bottom">
-        <div>
-          <div class="svc-price-label">A partir de</div>
-          <div class="svc-price-full">R$ 3.600</div>
-          <div class="svc-price">R$ 2.500 <em>único</em></div>
-          <div class="discount-tag">−31% tabela</div>
-        </div>
-        <div class="svc-note">Mercado cobra R$ 4.000–8.000</div>
-      </div>
-    </div>
-
-    <div class="svc-card">
-      <div class="svc-top">
-        <div class="svc-name">Materiais de Marca</div>
-      </div>
-      <div class="svc-desc">Cartão de visita, apresentação institucional, papel timbrado, assinatura de e-mail e demais materiais aplicados.</div>
-      <div class="svc-includes">
-        <span class="si-tag">Cartão de visita</span>
-        <span class="si-tag">Apresentação</span>
-        <span class="si-tag">Assets sociais</span>
-      </div>
-      <div class="svc-bottom">
-        <div>
-          <div class="svc-price-label">A partir de</div>
-          <div class="svc-price-full">R$ 1.300</div>
-          <div class="svc-price">R$ 900 <em>único</em></div>
-          <div class="discount-tag">−31% tabela</div>
-        </div>
-        <div class="svc-note">Por pacote de materiais</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════
-       CATEGORIA 2 — SITES & PRESENÇA DIGITAL
-  ══════════════════════════════════ -->
-  <div class="cat-label c-digital">
-    <div class="cat-icon">🌐</div>
-    <div class="cat-title">Sites & Presença Digital</div>
-    <div class="cat-line"></div>
-  </div>
-
-  <div class="services-grid">
-
-    <!-- FULL WIDTH — SITE PREMIUM -->
-    <div class="svc-card-full">
-      <div class="svc-full-inner">
-        <div class="svc-full-left">
-          <div class="svc-badge sb-hot" style="margin-bottom:10px;display:inline-block">Serviço Principal</div>
-          <div class="svc-name">Site Institucional + Landing Page Premium</div>
-          <div class="svc-desc" style="margin-top:8px">Site completo de alta conversão com design premium, responsivo, otimizado para SEO e hospedado. Inclui formulário inteligente com lead scoring integrado ao CRM.</div>
-          <div class="svc-full-includes">
-            <div class="sfi"><div class="sfi-check sc-p">✓</div>Design premium responsivo</div>
-            <div class="sfi"><div class="sfi-check sc-p">✓</div>Landing page de conversão</div>
-            <div class="sfi"><div class="sfi-check sc-p">✓</div>Formulário inteligente com lead scoring</div>
-            <div class="sfi"><div class="sfi-check sc-p">✓</div>SEO básico e velocidade otimizada</div>
-            <div class="sfi"><div class="sfi-check sc-p">✓</div>Integração com CRM e WhatsApp</div>
-          </div>
-        </div>
-        <div class="svc-full-price">
-          <div class="sfp-market">De R$ 8.600</div>
-          <div class="sfp-label">Tabela</div>
-          <div class="sfp-price">R$ <em>6.000</em></div>
-          <div class="discount-tag" style="margin:6px 0 8px">−30% tabela</div>
-          <div class="sfp-note">Pagamento único<br>ou R$ 500/mês em 12x<br><span style="color:#4ADE80;font-weight:600">Incluso em pacotes mensais</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="svc-card">
-      <div class="svc-top">
-        <div class="svc-name">Site One Page</div>
-        <div class="svc-badge sb-new">Novo</div>
-      </div>
-      <div class="svc-desc">Site de página única para negócios que precisam de presença digital rápida e profissional. Ideal para freelancers e pequenos negócios.</div>
-      <div class="svc-includes">
-        <span class="si-tag">Design responsivo</span>
-        <span class="si-tag">5 seções</span>
-        <span class="si-tag">Formulário de contato</span>
-      </div>
-      <div class="svc-bottom">
-        <div>
-          <div class="svc-price-label">A partir de</div>
-          <div class="svc-price-full">R$ 4.300</div>
-          <div class="svc-price">R$ 3.000 <em>único</em></div>
-          <div class="discount-tag">−30% tabela</div>
-        </div>
-        <div class="svc-note">Entrega em 7 dias</div>
-      </div>
-    </div>
-
-    <div class="svc-card">
-      <div class="svc-top">
-        <div class="svc-name">Google Meu Negócio</div>
-      </div>
-      <div class="svc-desc">Configuração e otimização completa do perfil Google. Apareça nas buscas locais, no Maps e destaque sua empresa para quem pesquisa na sua cidade.</div>
-      <div class="svc-includes">
-        <span class="si-tag">Setup completo</span>
-        <span class="si-tag">Fotos otimizadas</span>
-        <span class="si-tag">Palavras-chave locais</span>
-      </div>
-      <div class="svc-bottom">
-        <div>
-          <div class="svc-price-label">A partir de</div>
-          <div class="svc-price-full">R$ 700</div>
-          <div class="svc-price">R$ 490 <em>único</em></div>
-          <div class="discount-tag">−30% tabela</div>
-        </div>
-        <div class="svc-note">+ R$ 200/mês para gestão</div>
-      </div>
-    </div>
-
-    <div class="svc-card">
-      <div class="svc-top">
-        <div class="svc-name">WhatsApp Business</div>
-      </div>
-      <div class="svc-desc">Configuração profissional do WhatsApp Business com catálogo, respostas automáticas, mensagem de ausência e perfil otimizado.</div>
-      <div class="svc-includes">
-        <span class="si-tag">Perfil completo</span>
-        <span class="si-tag">Catálogo de produtos</span>
-        <span class="si-tag">Respostas rápidas</span>
-      </div>
-      <div class="svc-bottom">
-        <div>
-          <div class="svc-price-label">A partir de</div>
-          <div class="svc-price-full">R$ 600</div>
-          <div class="svc-price">R$ 420 <em>único</em></div>
-          <div class="discount-tag">−30% tabela</div>
-        </div>
-        <div class="svc-note">Incluso em pacotes</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════
-       CATEGORIA 3 — MARKETING & TRÁFEGO
-  ══════════════════════════════════ -->
-  <div class="cat-label c-mkt">
-    <div class="cat-icon">📣</div>
-    <div class="cat-title">Marketing & Tráfego Pago</div>
-    <div class="cat-line"></div>
-  </div>
-
-  <div class="services-grid">
-    <div class="svc-card">
-      <div class="svc-top">
-        <div class="svc-name">Gestão de Tráfego Pago</div>
-        <div class="svc-badge sb-pop">Popular</div>
-      </div>
-      <div class="svc-desc">Criação, gestão e otimização de campanhas no Meta Ads (Instagram/Facebook) e Google Ads. Segmentação estratégica, relatório mensal.</div>
-      <div class="svc-includes">
-        <span class="si-tag">Meta Ads</span>
-        <span class="si-tag">Google Ads</span>
-        <span class="si-tag">Segmentação</span>
-        <span class="si-tag">Relatório mensal</span>
-      </div>
-      <div class="svc-bottom">
-        <div>
-          <div class="svc-price-label">Mensalidade</div>
-          <div class="svc-price-full">R$ 2.500</div>
-          <div class="svc-price">R$ 1.750 <em>/mês</em></div>
-          <div class="discount-tag">−30% tabela</div>
-        </div>
-        <div class="svc-note">Verba de mídia paga à parte</div>
-      </div>
-    </div>
-
-    <div class="svc-card featured">
-      <div class="svc-top">
-        <div class="svc-name">Estratégia + Gestão de Redes Sociais</div>
-        <div class="svc-badge sb-hot">Combo</div>
-      </div>
-      <div class="svc-desc">Pacote completo de marketing de conteúdo: estratégia + execução. Posicionamento, persona e calendário editorial somados à criação e publicação mensal no Instagram.</div>
-      <div class="svc-includes">
-        <span class="si-tag">Persona & Tom de voz</span>
-        <span class="si-tag">Calendário 90 dias</span>
-        <span class="si-tag">12 posts/mês</span>
-        <span class="si-tag">4 stories/semana</span>
-        <span class="si-tag">Arte + legenda</span>
-      </div>
-      <div class="svc-bottom">
-        <div>
-          <div class="svc-price-label">Mensalidade</div>
-          <div class="svc-price-full">R$ 2.500</div>
-          <div class="svc-price">R$ 1.750 <em>/mês</em></div>
-          <div class="discount-tag">−30% tabela</div>
-        </div>
-        <div class="svc-note">Estratégia + gestão vendidas juntas</div>
-      </div>
-    </div>
-
-    <div class="svc-card-full">
-      <div class="svc-full-inner">
-        <div class="svc-full-left">
-          <div class="svc-badge sb-hot" style="margin-bottom:10px;display:inline-block">Combo Fechado</div>
-          <div class="svc-name">Tráfego Pago + Gestão de Redes Sociais</div>
-          <div class="svc-desc" style="margin-top:8px">Contrate os dois juntos e pague menos. Conteúdo e anúncio trabalhando na mesma estratégia: o que você publica alimenta o que você anuncia.</div>
-          <div class="svc-full-includes">
-            <div class="sfi"><div class="sfi-check sc-p">✓</div>Tudo da Gestão de Tráfego Pago (Meta + Google)</div>
-            <div class="sfi"><div class="sfi-check sc-p">✓</div>Tudo da Estratégia + Gestão de Redes Sociais</div>
-            <div class="sfi"><div class="sfi-check sc-p">✓</div>Estratégia única e integrada entre conteúdo e mídia</div>
-            <div class="sfi"><div class="sfi-check sc-p">✓</div>Relatório mensal consolidado</div>
-          </div>
-        </div>
-        <div class="svc-full-price">
-          <div class="sfp-market">R$ 3.500 contratando separado</div>
-          <div class="sfp-label">Mensalidade</div>
-          <div class="sfp-price">R$ 2.500 <em>/mês</em></div>
-          <div class="discount-tag" style="margin:6px 0 8px">Economize R$ 1.000/mês</div>
-          <div class="sfp-note">R$ 12.000 de economia por ano<br>Verba de mídia paga à parte</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════
-       CATEGORIA 4 — CRM & GESTÃO DE LEADS
-  ══════════════════════════════════ -->
-  <div class="cat-label c-crm">
-    <div class="cat-icon">🏷️</div>
-    <div class="cat-title">CRM & Gestão de Leads</div>
-    <div class="cat-line"></div>
-  </div>
-
-  <div class="services-grid">
-    <div class="svc-card featured">
-      <div class="svc-top">
-        <div class="svc-name">CRM Configurado</div>
-        <div class="svc-badge sb-pop">Popular</div>
-      </div>
-      <div class="svc-desc">Configuração completa do CRM com pipeline de vendas, tags de temperatura de lead (🔥🌡️❄️), campos personalizados e integração com formulário.</div>
-      <div class="svc-includes">
-        <span class="si-tag">Pipeline estruturado</span>
-        <span class="si-tag">Tags automáticas</span>
-        <span class="si-tag">Lead scoring</span>
-        <span class="si-tag">Treinamento incluso</span>
-      </div>
-      <div class="svc-bottom">
-        <div>
-          <div class="svc-price-label">Setup único</div>
-          <div class="svc-price-full">R$ 1.400</div>
-          <div class="svc-price">R$ 1.000 <em>único</em></div>
-          <div class="discount-tag">−29% tabela</div>
-        </div>
-        <div class="svc-note">Mercado cobra R$ 2.500–5.000</div>
-      </div>
-    </div>
-
-    <div class="svc-card">
-      <div class="svc-top">
-        <div class="svc-name">Formulário Inteligente</div>
-        <div class="svc-badge sb-hot">Exclusivo</div>
-      </div>
-      <div class="svc-desc">Formulário em 3 etapas com lead scoring automático, trilha calculada por idade e redirecionamento personalizado ao WhatsApp com mensagem pré-preenchida.</div>
-      <div class="svc-includes">
-        <span class="si-tag">3 etapas</span>
-        <span class="si-tag">Lead scoring</span>
-        <span class="si-tag">WhatsApp redirect</span>
-        <span class="si-tag">CRM integrado</span>
-      </div>
-      <div class="svc-bottom">
-        <div>
-          <div class="svc-price-label">Projeto único</div>
-          <div class="svc-price-full">R$ 850</div>
-          <div class="svc-price">R$ 600 <em>único</em></div>
-          <div class="discount-tag">−29% tabela</div>
-        </div>
-        <div class="svc-note">Incluso nos pacotes de site</div>
-      </div>
-    </div>
-
-    <div class="svc-card">
-      <div class="svc-top">
-        <div class="svc-name">Gestão de CRM Mensal</div>
-      </div>
-      <div class="svc-desc">Manutenção, atualização e análise do CRM. Relatório de leads, conversão por etapa e recomendações comerciais mensais.</div>
-      <div class="svc-includes">
-        <span class="si-tag">Atualização pipeline</span>
-        <span class="si-tag">Relatório mensal</span>
-        <span class="si-tag">Análise de conversão</span>
-      </div>
-      <div class="svc-bottom">
-        <div>
-          <div class="svc-price-label">Mensalidade</div>
-          <div class="svc-price-full">R$ 850</div>
-          <div class="svc-price">R$ 600 <em>/mês</em></div>
-          <div class="discount-tag">−29% tabela</div>
-        </div>
-        <div class="svc-note">Incluso em pacotes</div>
-      </div>
-    </div>
-
-    <div class="svc-card">
-      <div class="svc-top">
-        <div class="svc-name">Script Comercial</div>
-        <div class="svc-badge sb-new">Novo</div>
-      </div>
-      <div class="svc-desc">Criação de scripts personalizados de abordagem para cada temperatura de lead. A equipe comercial sabe exatamente o que dizer para cada perfil.</div>
-      <div class="svc-includes">
-        <span class="si-tag">Script 🔥 Quente</span>
-        <span class="si-tag">Script 🌡️ Morno</span>
-        <span class="si-tag">Script ❄️ Frio</span>
-        <span class="si-tag">Treinamento</span>
-      </div>
-      <div class="svc-bottom">
-        <div>
-          <div class="svc-price-label">Projeto único</div>
-          <div class="svc-price-full">R$ 700</div>
-          <div class="svc-price">R$ 500 <em>único</em></div>
-          <div class="discount-tag">−29% tabela</div>
-        </div>
-        <div class="svc-note">Incluso em pacotes</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════
-       CATEGORIA 5 — AUTOMAÇÃO (EM BREVE)
-  ══════════════════════════════════ -->
-  <div class="cat-label c-auto">
-    <div class="cat-icon">🤖</div>
-    <div class="cat-title">Automação & Nutrição de Leads</div>
-    <div class="cat-line"></div>
-  </div>
-
-  <div class="services-grid">
-    <div class="svc-card" style="opacity:.65">
-      <div class="svc-top">
-        <div class="svc-name">Automação WhatsApp</div>
-        <div class="svc-badge sb-soon">Em breve</div>
-      </div>
-      <div class="svc-desc">Sequências automáticas de WhatsApp por temperatura de lead. Nutrição, follow-up e reativação sem esforço manual.</div>
-      <div class="svc-includes">
-        <span class="si-tag">Sequência 🔥</span>
-        <span class="si-tag">Sequência 🌡️</span>
-        <span class="si-tag">Reativação ❄️</span>
-      </div>
-      <div class="svc-bottom">
-        <div>
-          <div class="svc-price-label">Em breve</div>
-          <div class="svc-price">R$ 1.260 <em>/mês</em></div>
-        </div>
-        <div class="svc-note">Momento 2 dos pacotes</div>
-      </div>
-    </div>
-
-    <div class="svc-card" style="opacity:.65">
-      <div class="svc-top">
-        <div class="svc-name">Fluxo de E-mail</div>
-        <div class="svc-badge sb-soon">Em breve</div>
-      </div>
-      <div class="svc-desc">Criação de sequências de e-mail para nutrição de leads frios e mornos. Conteúdo educativo que aquece e converte.</div>
-      <div class="svc-includes">
-        <span class="si-tag">5 e-mails/sequência</span>
-        <span class="si-tag">Segmentação</span>
-        <span class="si-tag">A/B testing</span>
-      </div>
-      <div class="svc-bottom">
-        <div>
-          <div class="svc-price-label">Em breve</div>
-          <div class="svc-price">R$ 980 <em>/mês</em></div>
-        </div>
-        <div class="svc-note">Momento 2 dos pacotes</div>
-      </div>
-    </div>
-
-    <div class="svc-card" style="opacity:.65">
-      <div class="svc-top">
-        <div class="svc-name">Agendamento Automático</div>
-        <div class="svc-badge sb-soon">Em breve</div>
-      </div>
-      <div class="svc-desc">Integração de calendário online com disparo automático de link de agendamento para leads quentes. Confirmações e lembretes automáticos.</div>
-      <div class="svc-includes">
-        <span class="si-tag">Cal.com / Calendly</span>
-        <span class="si-tag">Lembretes auto</span>
-        <span class="si-tag">CRM integrado</span>
-      </div>
-      <div class="svc-bottom">
-        <div>
-          <div class="svc-price-label">Em breve</div>
-          <div class="svc-price">R$ 700 <em>/mês</em></div>
-        </div>
-        <div class="svc-note">Momento 2 dos pacotes</div>
-      </div>
-    </div>
-
-    <div class="svc-card" style="opacity:.65">
-      <div class="svc-top">
-        <div class="svc-name">Programa de Indicações</div>
-        <div class="svc-badge sb-soon">Em breve</div>
-      </div>
-      <div class="svc-desc">Estruturação de programa de indicações com automação de convites, rastreamento e recompensas para clientes que indicam novos clientes.</div>
-      <div class="svc-includes">
-        <span class="si-tag">Fluxo de convite</span>
-        <span class="si-tag">Rastreamento</span>
-        <span class="si-tag">Recompensas</span>
-      </div>
-      <div class="svc-bottom">
-        <div>
-          <div class="svc-price-label">Em breve</div>
-          <div class="svc-price">R$ 840 <em>/mês</em></div>
-        </div>
-        <div class="svc-note">Momento 2 dos pacotes</div>
-      </div>
-    </div>
-  </div>
-
-  <hr class="divider">
 
   <!-- ══════════════════════════════════
        PACOTES COMBINADOS
   ══════════════════════════════════ -->
   <div class="cat-label c-pack">
     <div class="cat-icon">📦</div>
-    <div class="cat-title">Pacotes Combinados — Melhor Custo-Benefício</div>
+    <div class="cat-titles"><div class="cat-title">Pacotes Combinados — Melhor Custo-Benefício</div><div class="cat-sub">A maioria dos clientes começa por um destes. Sem fidelidade — cancele quando quiser.</div></div>
     <div class="cat-line"></div>
   </div>
 
@@ -925,6 +470,489 @@ body{
     <div class="dn-text">
       <strong>Como funciona o preço:</strong> Todos os valores já trazem 30% de desconto aplicado sobre a tabela cheia. Sem taxa de setup, contratos mensais sem fidelidade mínima. Valores válidos na data desta proposta, podendo variar conforme o escopo.</div>
   </div>
+
+  <!-- CTA INTERMEDIARIO -->
+  <div class="mid-cta">
+    <div class="mid-cta-text">
+      <strong>Não sabe qual desses é o seu?</strong>
+      <span>Em 30 minutos a gente entende o momento do seu negócio e indica o caminho. Sem compromisso.</span>
+    </div>
+    <a class="mid-cta-btn" href="https://wa.me/5592991755756">Falar no WhatsApp</a>
+  </div>
+
+  <!-- DIVISOR CATALOGO -->
+  <div class="section-divider">
+    <div class="sd-title">Ou monte do seu jeito</div>
+    <div class="sd-sub">Todos os serviços também são vendidos avulsos. Contrate só o que faz sentido agora.</div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       CATEGORIA 1 — BRANDING & IDENTIDADE
+  ══════════════════════════════════ -->
+  <div class="cat-label c-brand">
+    <div class="cat-icon">🎨</div>
+    <div class="cat-titles"><div class="cat-title">Branding & Identidade Visual</div><div class="cat-sub">Sua marca não passa a impressão que o seu trabalho merece</div></div>
+    <div class="cat-line"></div>
+  </div>
+
+  <div class="services-grid">
+    <div class="svc-card">
+      <div class="svc-top">
+        <div class="svc-name">Logotipo Profissional</div>
+      </div>
+      <div class="svc-desc">Criação de logotipo estratégico com conceito, variações e manual de uso básico. Entregue em todos os formatos.</div>
+      <div class="svc-includes">
+        <span class="si-tag">2 conceitos</span>
+        <span class="si-tag">3 revisões</span>
+        <span class="si-tag">Todos os formatos</span>
+        <span class="si-tag">Manual básico</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">Valor único</div>
+          <div class="svc-price-full">R$ 2.500</div>
+          <div class="svc-price">R$ 1.750 <em>único</em></div>
+          <div class="discount-tag">−30% tabela</div>
+        </div>
+        <div class="svc-note">Mercado cobra R$ 2.000–4.000</div>
+      </div>
+    </div>
+
+    <div class="svc-card featured">
+      <div class="svc-top">
+        <div class="svc-name">Brand Identity Completo</div>
+      </div>
+      <div class="svc-desc">Identidade visual completa: logotipo, paleta, tipografia, tom de voz, aplicações e brandbook. A marca do zero ao sistema.</div>
+      <div class="svc-includes">
+        <span class="si-tag">Logotipo</span>
+        <span class="si-tag">Paleta & Tipografia</span>
+        <span class="si-tag">Tom de Voz</span>
+        <span class="si-tag">Brandbook</span>
+        <span class="si-tag">Assets digitais</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">Valor único</div>
+          <div class="svc-price-full">R$ 5.000</div>
+          <div class="svc-price">R$ 3.500 <em>único</em></div>
+          <div class="discount-tag">−30% tabela</div>
+        </div>
+        <div class="svc-note">Mercado cobra R$ 6.000–15.000</div>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-top">
+        <div class="svc-name">Redesign de Marca</div>
+      </div>
+      <div class="svc-desc">Modernização de marca existente mantendo reconhecimento. Para negócios que cresceram mas a marca ficou para trás.</div>
+      <div class="svc-includes">
+        <span class="si-tag">Diagnóstico</span>
+        <span class="si-tag">Evolução visual</span>
+        <span class="si-tag">Guia de transição</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">Valor único</div>
+          <div class="svc-price-full">R$ 3.600</div>
+          <div class="svc-price">R$ 2.500 <em>único</em></div>
+          <div class="discount-tag">−31% tabela</div>
+        </div>
+        <div class="svc-note">Mercado cobra R$ 4.000–8.000</div>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-top">
+        <div class="svc-name">Materiais de Marca</div>
+      </div>
+      <div class="svc-desc">Cartão de visita, apresentação institucional, papel timbrado, assinatura de e-mail e demais materiais aplicados.</div>
+      <div class="svc-includes">
+        <span class="si-tag">Cartão de visita</span>
+        <span class="si-tag">Apresentação</span>
+        <span class="si-tag">Assets sociais</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">Valor único</div>
+          <div class="svc-price-full">R$ 1.300</div>
+          <div class="svc-price">R$ 900 <em>único</em></div>
+          <div class="discount-tag">−31% tabela</div>
+        </div>
+        <div class="svc-note">Por pacote de materiais</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       CATEGORIA 2 — SITES & PRESENÇA DIGITAL
+  ══════════════════════════════════ -->
+  <div class="cat-label c-digital">
+    <div class="cat-icon">🌐</div>
+    <div class="cat-titles"><div class="cat-title">Sites & Presença Digital</div><div class="cat-sub">Você tem marca, mas quem procura não te encontra</div></div>
+    <div class="cat-line"></div>
+  </div>
+
+  <div class="services-grid">
+
+    <!-- FULL WIDTH — SITE PREMIUM -->
+    <div class="svc-card-full">
+      <div class="svc-full-inner">
+        <div class="svc-full-left">
+          <div class="svc-badge sb-hot" style="margin-bottom:10px;display:inline-block">Serviço Principal</div>
+          <div class="svc-name">Site Institucional + Landing Page Premium</div>
+          <div class="svc-desc" style="margin-top:8px">Site completo de alta conversão com design premium, responsivo, otimizado para SEO e hospedado. Inclui formulário inteligente com lead scoring integrado ao CRM.</div>
+          <div class="svc-full-includes">
+            <div class="sfi"><div class="sfi-check sc-p">✓</div>Design premium responsivo</div>
+            <div class="sfi"><div class="sfi-check sc-p">✓</div>Landing page de conversão</div>
+            <div class="sfi"><div class="sfi-check sc-p">✓</div>Formulário inteligente com lead scoring</div>
+            <div class="sfi"><div class="sfi-check sc-p">✓</div>SEO básico e velocidade otimizada</div>
+            <div class="sfi"><div class="sfi-check sc-p">✓</div>Integração com CRM e WhatsApp</div>
+          </div>
+        </div>
+        <div class="svc-full-price">
+          <div class="sfp-market">De R$ 8.600</div>
+          <div class="sfp-label">Tabela</div>
+          <div class="sfp-price">R$ <em>6.000</em></div>
+          <div class="discount-tag" style="margin:6px 0 8px">−30% tabela</div>
+          <div class="sfp-note">Pagamento único<br>ou R$ 500/mês em 12x<br><span style="color:#4ADE80;font-weight:600">Incluso em pacotes mensais</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-top">
+        <div class="svc-name">Site One Page</div>
+      </div>
+      <div class="svc-desc">Site de página única para negócios que precisam de presença digital rápida e profissional. Ideal para freelancers e pequenos negócios.</div>
+      <div class="svc-includes">
+        <span class="si-tag">Design responsivo</span>
+        <span class="si-tag">5 seções</span>
+        <span class="si-tag">Formulário de contato</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">Valor único</div>
+          <div class="svc-price-full">R$ 4.300</div>
+          <div class="svc-price">R$ 3.000 <em>único</em></div>
+          <div class="discount-tag">−30% tabela</div>
+        </div>
+        <div class="svc-note">Entrega em 7 dias</div>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-top">
+        <div class="svc-name">Google Meu Negócio</div>
+      </div>
+      <div class="svc-desc">Configuração e otimização completa do perfil Google. Apareça nas buscas locais, no Maps e destaque sua empresa para quem pesquisa na sua cidade.</div>
+      <div class="svc-includes">
+        <span class="si-tag">Setup completo</span>
+        <span class="si-tag">Fotos otimizadas</span>
+        <span class="si-tag">Palavras-chave locais</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">Valor único</div>
+          <div class="svc-price-full">R$ 700</div>
+          <div class="svc-price">R$ 490 <em>único</em></div>
+          <div class="discount-tag">−30% tabela</div>
+        </div>
+        <div class="svc-note">+ R$ 200/mês para gestão</div>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-top">
+        <div class="svc-name">WhatsApp Business</div>
+      </div>
+      <div class="svc-desc">Configuração profissional do WhatsApp Business com catálogo, respostas automáticas, mensagem de ausência e perfil otimizado.</div>
+      <div class="svc-includes">
+        <span class="si-tag">Perfil completo</span>
+        <span class="si-tag">Catálogo de produtos</span>
+        <span class="si-tag">Respostas rápidas</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">Valor único</div>
+          <div class="svc-price-full">R$ 600</div>
+          <div class="svc-price">R$ 420 <em>único</em></div>
+          <div class="discount-tag">−30% tabela</div>
+        </div>
+        <div class="svc-note">Incluso em pacotes</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       CATEGORIA 3 — MARKETING & TRÁFEGO
+  ══════════════════════════════════ -->
+  <div class="cat-label c-mkt">
+    <div class="cat-icon">📣</div>
+    <div class="cat-titles"><div class="cat-title">Marketing & Tráfego Pago</div><div class="cat-sub">Você é encontrado, mas chega pouca gente</div></div>
+    <div class="cat-line"></div>
+  </div>
+
+  <div class="services-grid">
+    <div class="svc-card">
+      <div class="svc-top">
+        <div class="svc-name">Gestão de Tráfego Pago</div>
+      </div>
+      <div class="svc-desc">Criação, gestão e otimização de campanhas no Meta Ads (Instagram/Facebook) e Google Ads. Segmentação estratégica, relatório mensal.</div>
+      <div class="svc-includes">
+        <span class="si-tag">Meta Ads</span>
+        <span class="si-tag">Google Ads</span>
+        <span class="si-tag">Segmentação</span>
+        <span class="si-tag">Relatório mensal</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">Mensalidade</div>
+          <div class="svc-price-full">R$ 2.500</div>
+          <div class="svc-price">R$ 1.750 <em>/mês</em></div>
+          <div class="discount-tag">−30% tabela</div>
+        </div>
+        <div class="svc-note">Verba de mídia paga à parte</div>
+      </div>
+    </div>
+
+    <div class="svc-card featured">
+      <div class="svc-top">
+        <div class="svc-name">Estratégia + Gestão de Redes Sociais</div>
+      </div>
+      <div class="svc-desc">Pacote completo de marketing de conteúdo: estratégia + execução. Posicionamento, persona e calendário editorial somados à criação e publicação mensal no Instagram.</div>
+      <div class="svc-includes">
+        <span class="si-tag">Persona & Tom de voz</span>
+        <span class="si-tag">Calendário 90 dias</span>
+        <span class="si-tag">12 posts/mês</span>
+        <span class="si-tag">4 stories/semana</span>
+        <span class="si-tag">Arte + legenda</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">Mensalidade</div>
+          <div class="svc-price-full">R$ 2.500</div>
+          <div class="svc-price">R$ 1.750 <em>/mês</em></div>
+          <div class="discount-tag">−30% tabela</div>
+        </div>
+        <div class="svc-note">Estratégia + gestão vendidas juntas</div>
+      </div>
+    </div>
+
+    <div class="svc-card-full">
+      <div class="svc-full-inner">
+        <div class="svc-full-left">
+          <div class="svc-badge sb-hot" style="margin-bottom:10px;display:inline-block">Combo Fechado</div>
+          <div class="svc-name">Tráfego Pago + Gestão de Redes Sociais</div>
+          <div class="svc-desc" style="margin-top:8px">Contrate os dois juntos e pague menos. Conteúdo e anúncio trabalhando na mesma estratégia: o que você publica alimenta o que você anuncia.</div>
+          <div class="svc-full-includes">
+            <div class="sfi"><div class="sfi-check sc-p">✓</div>Tudo da Gestão de Tráfego Pago (Meta + Google)</div>
+            <div class="sfi"><div class="sfi-check sc-p">✓</div>Tudo da Estratégia + Gestão de Redes Sociais</div>
+            <div class="sfi"><div class="sfi-check sc-p">✓</div>Estratégia única e integrada entre conteúdo e mídia</div>
+            <div class="sfi"><div class="sfi-check sc-p">✓</div>Relatório mensal consolidado</div>
+          </div>
+        </div>
+        <div class="svc-full-price">
+          <div class="sfp-market">R$ 3.500 contratando separado</div>
+          <div class="sfp-label">Mensalidade</div>
+          <div class="sfp-price">R$ 2.500 <em>/mês</em></div>
+          <div class="discount-tag" style="margin:6px 0 8px">Economize R$ 1.000/mês</div>
+          <div class="sfp-note">R$ 12.000 de economia por ano<br>Verba de mídia paga à parte</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       CATEGORIA 4 — CRM & GESTÃO DE LEADS
+  ══════════════════════════════════ -->
+  <div class="cat-label c-crm">
+    <div class="cat-icon">🏷️</div>
+    <div class="cat-titles"><div class="cat-title">CRM & Gestão de Leads</div><div class="cat-sub">Chega gente, mas nem todo mundo vira venda</div></div>
+    <div class="cat-line"></div>
+  </div>
+
+  <div class="services-grid">
+    <div class="svc-card featured">
+      <div class="svc-top">
+        <div class="svc-name">CRM Configurado</div>
+      </div>
+      <div class="svc-desc">Configuração completa do CRM com pipeline de vendas, tags de temperatura de lead (🔥🌡️❄️), campos personalizados e integração com formulário.</div>
+      <div class="svc-includes">
+        <span class="si-tag">Pipeline estruturado</span>
+        <span class="si-tag">Tags automáticas</span>
+        <span class="si-tag">Lead scoring</span>
+        <span class="si-tag">Treinamento incluso</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">Valor único</div>
+          <div class="svc-price-full">R$ 1.400</div>
+          <div class="svc-price">R$ 1.000 <em>único</em></div>
+          <div class="discount-tag">−29% tabela</div>
+        </div>
+        <div class="svc-note">Mercado cobra R$ 2.500–5.000</div>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-top">
+        <div class="svc-name">Formulário Inteligente</div>
+      </div>
+      <div class="svc-desc">Formulário em 3 etapas com lead scoring automático, trilha calculada por idade e redirecionamento personalizado ao WhatsApp com mensagem pré-preenchida.</div>
+      <div class="svc-includes">
+        <span class="si-tag">3 etapas</span>
+        <span class="si-tag">Lead scoring</span>
+        <span class="si-tag">WhatsApp redirect</span>
+        <span class="si-tag">CRM integrado</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">Valor único</div>
+          <div class="svc-price-full">R$ 850</div>
+          <div class="svc-price">R$ 600 <em>único</em></div>
+          <div class="discount-tag">−29% tabela</div>
+        </div>
+        <div class="svc-note">Incluso nos pacotes de site</div>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-top">
+        <div class="svc-name">Gestão de CRM Mensal</div>
+      </div>
+      <div class="svc-desc">Manutenção, atualização e análise do CRM. Relatório de leads, conversão por etapa e recomendações comerciais mensais.</div>
+      <div class="svc-includes">
+        <span class="si-tag">Atualização pipeline</span>
+        <span class="si-tag">Relatório mensal</span>
+        <span class="si-tag">Análise de conversão</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">Mensalidade</div>
+          <div class="svc-price-full">R$ 850</div>
+          <div class="svc-price">R$ 600 <em>/mês</em></div>
+          <div class="discount-tag">−29% tabela</div>
+        </div>
+        <div class="svc-note">Incluso em pacotes</div>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-top">
+        <div class="svc-name">Script Comercial</div>
+      </div>
+      <div class="svc-desc">Criação de scripts personalizados de abordagem para cada temperatura de lead. A equipe comercial sabe exatamente o que dizer para cada perfil.</div>
+      <div class="svc-includes">
+        <span class="si-tag">Script 🔥 Quente</span>
+        <span class="si-tag">Script 🌡️ Morno</span>
+        <span class="si-tag">Script ❄️ Frio</span>
+        <span class="si-tag">Treinamento</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">Valor único</div>
+          <div class="svc-price-full">R$ 700</div>
+          <div class="svc-price">R$ 500 <em>único</em></div>
+          <div class="discount-tag">−29% tabela</div>
+        </div>
+        <div class="svc-note">Incluso em pacotes</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       CATEGORIA 5 — AUTOMAÇÃO (EM BREVE)
+  ══════════════════════════════════ -->
+  <div class="cat-label c-auto">
+    <div class="cat-icon">🤖</div>
+    <div class="cat-titles"><div class="cat-title">Automação & Nutrição de Leads</div><div class="cat-sub">O que hoje é feito na mão — e amanhã roda sozinho. Entra no <strong style="color:rgba(255,255,255,.5);font-weight:600">Momento 2</strong>: a segunda fase, depois que site, CRM e tráfego já estão rodando.</div></div>
+    <div class="cat-line"></div>
+  </div>
+
+  <div class="services-grid">
+    <div class="svc-card" style="opacity:.65">
+      <div class="svc-top">
+        <div class="svc-name">Automação WhatsApp</div>
+        <div class="svc-badge sb-soon">Em breve</div>
+      </div>
+      <div class="svc-desc">Sequências automáticas de WhatsApp por temperatura de lead. Nutrição, follow-up e reativação sem esforço manual.</div>
+      <div class="svc-includes">
+        <span class="si-tag">Sequência 🔥</span>
+        <span class="si-tag">Sequência 🌡️</span>
+        <span class="si-tag">Reativação ❄️</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">Em breve</div>
+          <div class="svc-price">R$ 1.260 <em>/mês</em></div>
+        </div>
+        <div class="svc-note">Momento 2 dos pacotes</div>
+      </div>
+    </div>
+
+    <div class="svc-card" style="opacity:.65">
+      <div class="svc-top">
+        <div class="svc-name">Fluxo de E-mail</div>
+        <div class="svc-badge sb-soon">Em breve</div>
+      </div>
+      <div class="svc-desc">Criação de sequências de e-mail para nutrição de leads frios e mornos. Conteúdo educativo que aquece e converte.</div>
+      <div class="svc-includes">
+        <span class="si-tag">5 e-mails/sequência</span>
+        <span class="si-tag">Segmentação</span>
+        <span class="si-tag">A/B testing</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">Em breve</div>
+          <div class="svc-price">R$ 980 <em>/mês</em></div>
+        </div>
+        <div class="svc-note">Momento 2 dos pacotes</div>
+      </div>
+    </div>
+
+    <div class="svc-card" style="opacity:.65">
+      <div class="svc-top">
+        <div class="svc-name">Agendamento Automático</div>
+        <div class="svc-badge sb-soon">Em breve</div>
+      </div>
+      <div class="svc-desc">Integração de calendário online com disparo automático de link de agendamento para leads quentes. Confirmações e lembretes automáticos.</div>
+      <div class="svc-includes">
+        <span class="si-tag">Cal.com / Calendly</span>
+        <span class="si-tag">Lembretes auto</span>
+        <span class="si-tag">CRM integrado</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">Em breve</div>
+          <div class="svc-price">R$ 700 <em>/mês</em></div>
+        </div>
+        <div class="svc-note">Momento 2 dos pacotes</div>
+      </div>
+    </div>
+
+    <div class="svc-card" style="opacity:.65">
+      <div class="svc-top">
+        <div class="svc-name">Programa de Indicações</div>
+        <div class="svc-badge sb-soon">Em breve</div>
+      </div>
+      <div class="svc-desc">Estruturação de programa de indicações com automação de convites, rastreamento e recompensas para clientes que indicam novos clientes.</div>
+      <div class="svc-includes">
+        <span class="si-tag">Fluxo de convite</span>
+        <span class="si-tag">Rastreamento</span>
+        <span class="si-tag">Recompensas</span>
+      </div>
+      <div class="svc-bottom">
+        <div>
+          <div class="svc-price-label">Em breve</div>
+          <div class="svc-price">R$ 840 <em>/mês</em></div>
+        </div>
+        <div class="svc-note">Momento 2 dos pacotes</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
 
   <!-- NOTES -->
   <div class="notes-grid">
